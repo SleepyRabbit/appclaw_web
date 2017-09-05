@@ -2,14 +2,13 @@
   <div class="my1">
 
     <div class="head flex">
-      <div class="head-left flex-shrink-0 flex flex-justify-content-center flex-align-items-center">
-        <a href="#">返回</a>
+      <div class="head-left flex-shrink-0 flex flex-align-items-center">
+        <a href="#" class="flex flex-justify-content-center flex-align-items-center"><i class="icon-back"></i>返回</a>
       </div>
       <div class="head-title flex-grow-1 flex flex-justify-content-center flex-align-items-center">
         <h3>我的</h3>
       </div>
       <div class="head-right flex-shrink-0 flex flex-justify-content-center flex-align-items-center">
-
       </div>
     </div>
 
@@ -23,8 +22,16 @@
 
     <div class="user-list overflow-y-scroll">
       <group>
-        <cell title="我的金币" :value="gold"><i slot="icon" class="icon icon-user"></i></cell>
-        <cell title="我的娃娃" link="mydoll"><i slot="icon" class="icon icon-happy"></i></cell>
+        <cell title="我的金币" :value="gold"><i slot="icon" class="icon-coin"></i></cell>
+        <cell title="我的娃娃" link="mydoll"><i slot="icon" class="icon-panda"></i></cell>
+        <cell title="分享" link="mydoll"><i slot="icon" class="icon-share"></i></cell>
+
+        <x-address title="" v-model="value" :list="addressData" placeholder="请选择地址">
+          <template slot="title" scope="props">
+            <i class="icon-address"></i>地址
+          </template>
+        </x-address>
+        <!--<span slot="title"><i class="icon-address"></i></span>-->
       </group>
     </div>
 
@@ -36,7 +43,7 @@
 </template>
 
 <script>
-import { Group, Cell, CellBox } from 'vux';
+import { Group, Cell, CellBox, XAddress, ChinaAddressV3Data } from 'vux';
 
 export default {
   name: 'my1',
@@ -44,14 +51,21 @@ export default {
     Group,
     Cell,
     CellBox,
+    XAddress,
   },
   data () {
     return {
         gold: 20,
+        title: "地址",
+        value: [],
+        addressData: ChinaAddressV3Data,
 //        url: '../assets/img/banner1.jpg',
     }
   },
   methods: {
+      onSelect: function () {
+        console.log(this.value);
+      }
   },
   created: function() {
     console.log("created!");
@@ -61,19 +75,22 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
   .head {
-    height: 60px;
+    height: 50px;
     border-bottom: 1px solid rgb(235,235,235);
   }
 
   .head-left, .head-right {
-    width: 40px;
-    /*background-color: #00AA88;*/
+    width: 60px;
   }
 
   .head a {
     text-decoration: none;
+    font-size: 16px;
+  }
+
+  .head i {
+    font-size: 16px;
   }
 
   .content-banner {
@@ -107,7 +124,9 @@ export default {
   }
 
   .user-list i {
-    margin: 0 5px 0 0;
+    margin: 0 10px 0 0;
+    color:rgb(4,190,2);
+    font-size: 16px;
   }
 
   .footer {

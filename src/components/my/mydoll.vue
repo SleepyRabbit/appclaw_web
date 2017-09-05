@@ -2,18 +2,17 @@
   <div class="mydoll">
 
     <div class="head flex">
-      <div class="head-left flex-shrink-0 flex flex-justify-content-center flex-align-items-center">
-        <a href="#">返回</a>
+      <div class="head-left flex-shrink-0 flex flex-align-items-center">
+        <a href="#" class="flex flex-justify-content-center flex-align-items-center"><i class="icon-back"></i>返回</a>
       </div>
       <div class="head-title flex-grow-1 flex flex-justify-content-center flex-align-items-center">
-        <h3>我的娃娃</h3>
+        <h3>我的</h3>
       </div>
       <div class="head-right flex-shrink-0 flex flex-justify-content-center flex-align-items-center">
-
       </div>
     </div>
 
-    <div class="content overflow-y-scroll">
+    <div class="content overflow-y-auto">
 
       <div class="content-list flex flex-wrap-wrap">
         <div class="list-container flex flex-justify-content-center flex-align-items-center"><img src="../../assets/img/cat.jpg" alt=""></div>
@@ -98,21 +97,25 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
   .head {
-    height: 80px;
-    background-color: rgb(241, 233, 49);
+    height: 50px;
+    border-bottom: 1px solid rgb(235,235,235);
   }
 
   .head-left, .head-right {
-    width: 40px;
-    /*background-color: #00AA88;*/
+    width: 60px;
   }
 
   .head a {
     text-decoration: none;
+    font-size: 16px;
+  }
+
+  .head i {
+    font-size: 16px;
   }
 
   .content {
-    /*background-color: red;*/
+    height: calc(100vh - 50px);
   }
 
   .content-list {
