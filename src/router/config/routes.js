@@ -6,14 +6,15 @@
 import list from '@/components/list'
 import detail from '@/components/detail'
 import my from '@/components/my'
-import my1 from '@/components/my1'
+import my1 from '@/components/my2'
 import mydoll from '@/components/my/mydoll'
+import myaddress from '@/components/my/myaddress'
 
 export default [
     {
       path: '/',
-      name: 'my1',
-      component: my1
+      name: 'my',
+      component: my
     },
     {
       path: '/list',
@@ -34,5 +35,10 @@ export default [
       path: '/mydoll',
       name: 'mydoll',
       component: mydoll
+    },
+    {
+      path: '/myaddress',
+      name: 'myaddress',
+      component: myaddress
     },
 ]

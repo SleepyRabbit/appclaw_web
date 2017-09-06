@@ -6,7 +6,7 @@
         <a href="#" class="flex flex-justify-content-center flex-align-items-center"><i class="icon-back"></i>返回</a>
       </div>
       <div class="head-title flex-grow-1 flex flex-justify-content-center flex-align-items-center">
-        <h3>我的</h3>
+        <h3>我的娃娃</h3>
       </div>
       <div class="head-right flex-shrink-0 flex flex-justify-content-center flex-align-items-center">
       </div>
@@ -98,6 +98,7 @@ export default {
 <style scoped>
   .head {
     height: 50px;
+    background-color: rgb(245,245,245);
     border-bottom: 1px solid rgb(235,235,235);
   }
 

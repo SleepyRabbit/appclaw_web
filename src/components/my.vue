@@ -1,10 +1,15 @@
 <template>
-  <div class="my flex flex-direction-column">
+  <div class="my">
 
-    <div class="head flex-shrink-0 flex flex-align-items-center flex-justify-content-space-between">
-      <a href="#" onclick="" class="flex flex-align-items-center flex-justify-content-center"><i class="icon-back"></i>返回</a>
-      <img src="../assets/img/logo.jpeg" alt="">
-      <a href="#" onclick="">我的</a>
+    <div class="head flex">
+      <div class="head-left flex-shrink-0 flex flex-align-items-center">
+        <a href="#" class="flex flex-justify-content-center flex-align-items-center"><i class="icon-back"></i>返回</a>
+      </div>
+      <div class="head-title flex-grow-1 flex flex-justify-content-center flex-align-items-center">
+        <h3>我的</h3>
+      </div>
+      <div class="head-right flex-shrink-0 flex flex-justify-content-center flex-align-items-center">
+      </div>
     </div>
 
     <div class="content-banner flex-shrink-0 flex flex-justify-content-center">
@@ -15,16 +20,19 @@
       </div>
     </div>
 
-    <div class="user-list flex-grow-1 overflow-y-scroll">
-      <a onclick="" class="flex flex-align-items-center flex-justify-content-space-between"><h3>我的金币</h3><i class="icon-more"></i></a>
-      <a onclick="" class="flex flex-align-items-center flex-justify-content-space-between"><h3>我的娃娃</h3><i class="icon-more"></i></a>
-      <a onclick="" class="flex flex-align-items-center flex-justify-content-space-between"><h3>我的抓取记录</h3><i class="icon-more"></i></a>
-      <a onclick="" class="flex flex-align-items-center flex-justify-content-space-between"><h3>分享</h3><i class="icon-more"></i></a>
-      <a onclick="" class="flex flex-align-items-center flex-justify-content-space-between"><h3>通知中心</h3><i class="icon-more"></i></a>
-      <a onclick="" class="flex flex-align-items-center flex-justify-content-space-between"><h3>背景音乐</h3><i class="icon-more"></i></a>
-      <a onclick="" class="flex flex-align-items-center flex-justify-content-space-between"><h3>音效</h3><i class="icon-more"></i></a>
-      <a onclick="" class="flex flex-align-items-center flex-justify-content-space-between"><h3>问题反馈</h3><i class="icon-more"></i></a>
-      <a onclick="" class="flex flex-align-items-center flex-justify-content-space-between"><h3>关于我们</h3><i class="icon-more"></i></a>
+    <div class="user-list overflow-y-scroll">
+      <group>
+        <cell title="我的金币" :value="gold"><i slot="icon" class="icon-coin"></i></cell>
+        <cell title="我的娃娃" link="mydoll"><i slot="icon" class="icon-panda"></i></cell>
+        <cell title="我的地址" link="myaddress"><i slot="icon" class="icon-address"></i></cell>
+        <cell title="分享" link="mydoll"><i slot="icon" class="icon-share"></i></cell>
+
+        <!--<x-address title="" v-model="value" :list="addressData" placeholder="请选择地址">-->
+          <!--<template slot="title" scope="props">-->
+            <!--<i class="icon-address"></i>地址-->
+          <!--</template>-->
+        <!--</x-address>-->
+      </group>
     </div>
 
     <div class="footer">
@@ -35,13 +43,29 @@
 </template>
 
 <script>
+import { Group, Cell, CellBox, XAddress, ChinaAddressV3Data } from 'vux';
+
 export default {
   name: 'my',
+  components: {
+    Group,
+    Cell,
+    CellBox,
+    XAddress,
+  },
   data () {
     return {
+        gold: 20,
+        title: "地址",
+        value: [],
+        addressData: ChinaAddressV3Data,
+//        url: '../assets/img/banner1.jpg',
     }
   },
   methods: {
+      onSelect: function () {
+        console.log(this.value);
+      }
   },
   created: function() {
     console.log("created!");
@@ -52,34 +76,26 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
   .head {
-    height: 60px;
+    height: 50px;
+    background-color: rgb(245,245,245);
     border-bottom: 1px solid rgb(235,235,235);
+  }
+
+  .head-left, .head-right {
+    width: 60px;
   }
 
   .head a {
     text-decoration: none;
-    color: black;
-    margin: 10px;
-    font-size: 14px;
-    font-weight: bold;
-  }
-
-  .head a i {
     font-size: 16px;
-    font-weight: bold;
   }
 
-  .head a:active {
-    color: black;
-  }
-
-  .head img {
-    width: 60%;
-    height: 100%;
+  .head i {
+    font-size: 16px;
   }
 
   .content-banner {
-    height: 130px;
+    height: 140px;
     border-bottom: 1px solid rgb(235,235,235);
     background-color: rgb(241,233,49);
   }
@@ -105,24 +121,12 @@ export default {
   }
 
   .user-list {
-    padding-top: 5px;
     background-color: rgb(235,235,235);
   }
 
-  .user-list a {
-    text-decoration: none;
-    height: 45px;
-    width: 100%;
-    padding: 0 10px;
-    background-color: white;
-    border-top: 1px solid rgb(223,223,223);
-  }
-
-  .user-list a:last-child {
-    border-bottom: 1px solid rgb(223,223,223);
-  }
-
-  .user-list a i {
+  .user-list i {
+    margin: 0 10px 0 0;
+    color:rgb(4,190,2);
     font-size: 16px;
   }
 
@@ -141,5 +145,11 @@ export default {
     background-color: white;
     border-top: 1px solid rgb(223,223,223);
     border-bottom: 1px solid rgb(223,223,223);
+  }
+</style>
+
+<style>
+  .vux-no-group-title {
+    margin-top: 5px !important;
   }
 </style>
