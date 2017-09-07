@@ -3,7 +3,7 @@
 
     <div class="head flex">
       <div class="head-left flex-shrink-0 flex flex-align-items-center">
-        <a href="#" class="flex flex-justify-content-center flex-align-items-center"><i class="icon-back"></i>返回</a>
+        <a href="#/my" class="flex flex-justify-content-center flex-align-items-center"><i class="icon-back"></i>返回</a>
       </div>
       <div class="head-title flex-grow-1 flex flex-justify-content-center flex-align-items-center">
         <h3>管理收货地址</h3>
@@ -12,14 +12,23 @@
       </div>
     </div>
 
-    <div class="content">
-
+    <div class="content overflow-y-auto">
+      <div class="list-container" v-for="list in lists">
+        <a href="#/addaddress">
+          <div class="list-name flex flex-justify-content-space-between flex-align-items-center">
+            <p>{{ list.name }}</p>
+            <p>{{ list.tel }}</p>
+          </div>
+          <p>{{ list.addr }}</p>
+          <div class="list-footer">
+          </div>
+        </a>
+      </div>
     </div>
 
     <div class="footer flex flex-justify-content-center flex-align-items-center">
-      <x-button :text="submit001" :disabled="disable001" @click.native="">+添加地址</x-button>
+      <x-button @click.native="addAddress">+添加地址</x-button>
     </div>
-
 
   </div>
 </template>
@@ -31,12 +40,48 @@ export default {
   name: 'myaddress',
   data () {
     return {
+        lists: [
+                {
+                  name: "侯恩星",
+                  tel: "18501053820",
+                  addr: "北京市海淀区清河中街68号五彩城写字楼10F-155 100085"
+                },
+                {
+                  name: "侯恩星",
+                  tel: "18501053820",
+                  addr: "北京市海淀区清河中街68号五彩城写字楼10F-155 100085"
+                },
+                {
+                  name: "侯恩星",
+                  tel: "18501053820",
+                  addr: "北京市海淀区清河中街68号五彩城写字楼10F-155 100085"
+                },
+                {
+                  name: "侯恩星",
+                  tel: "18501053820",
+                  addr: "北京市海淀区清河中街68号五彩城写字楼10F-155 100085"
+                },
+                {
+                  name: "侯恩星",
+                  tel: "18501053820",
+                  addr: "北京市海淀区清河中街68号五彩城写字楼10F-155 100085"
+                },
+                {
+                  name: "侯恩星",
+                  tel: "18501053820",
+                  addr: "北京市海淀区清河中街68号五彩城写字楼10F-155 100085"
+                },
+        ],
     }
   },
   components: {
     XButton,
   },
   methods: {
+    addAddress: function () {
+      this.$router.replace('/addaddress');
+//      this.$route.router.go('/addaddress');
+    },
     getJwt: function(name) {
       var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
       if (results)
@@ -97,22 +142,36 @@ export default {
 
   .content {
     height: calc(100vh - 110px);
-  }
-
-  .content-list {
-    width: 100%;
+    background-color: rgb(245,245,245);
   }
 
   .list-container {
-    width: 50vw;
-    height: 50vw;
-    padding: 20px;
-    /*border: 1px solid blue;*/
-    /*background-color: #00b3ee;*/
+    margin-bottom: 10px;
+    padding: 5px 10px 0 10px;
+    background-color: white;
   }
 
-  .list-container img {
-    width: 100%;
+  .list-container a {
+    text-decoration: none;
+    color: black;
+  }
+
+  .list-container a:active {
+    color: black;
+  }
+
+  .list-name {
+    height: 50px;
+  }
+
+  .list-name p {
+    font-size: 17px;
+  }
+
+  .list-footer {
+    height: 35px;
+    border-top: 1px solid rgb(235,235,235);
+    /*margin-bottom: 10px;*/
   }
 
   .footer {

@@ -3,7 +3,7 @@
 
     <div class="head flex">
       <div class="head-left flex-shrink-0 flex flex-align-items-center">
-        <a href="#" class="flex flex-justify-content-center flex-align-items-center"><i class="icon-back"></i>返回</a>
+        <a href="#/my" class="flex flex-justify-content-center flex-align-items-center"><i class="icon-back"></i>返回</a>
       </div>
       <div class="head-title flex-grow-1 flex flex-justify-content-center flex-align-items-center">
         <h3>我的娃娃</h3>

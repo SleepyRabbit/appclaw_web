@@ -43,23 +43,17 @@
 </template>
 
 <script>
-import { Group, Cell, CellBox, XAddress, ChinaAddressV3Data } from 'vux';
+import { Group, Cell } from 'vux';
 
 export default {
   name: 'my',
   components: {
     Group,
     Cell,
-    CellBox,
-    XAddress,
   },
   data () {
     return {
         gold: 20,
-        title: "地址",
-        value: [],
-        addressData: ChinaAddressV3Data,
-//        url: '../assets/img/banner1.jpg',
     }
   },
   methods: {
@@ -121,6 +115,7 @@ export default {
   }
 
   .user-list {
+    height: calc(100vh - 240px);
     background-color: rgb(235,235,235);
   }
 

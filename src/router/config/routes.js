@@ -9,11 +9,12 @@ import my from '@/components/my'
 import my1 from '@/components/my2'
 import mydoll from '@/components/my/mydoll'
 import myaddress from '@/components/my/myaddress'
+import addaddress from '@/components/my/addaddress'
 
 export default [
     {
       path: '/',
-      name: 'my',
+      name: 'root',
       component: my
     },
     {
@@ -40,5 +41,10 @@ export default [
       path: '/myaddress',
       name: 'myaddress',
       component: myaddress
+    },
+    {
+      path: '/addaddress',
+      name: 'addaddress',
+      component: addaddress
     },
 ]
