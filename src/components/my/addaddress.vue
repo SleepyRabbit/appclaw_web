@@ -20,15 +20,14 @@
         <div class="list flex flex-align-items-center">
           <label>手机号码：</label><input type="text" placeholder="请输入手机号码" class="flex-grow-1">
         </div>
-        <!--<div class="list">-->
-          <!--&lt;!&ndash;<group>&ndash;&gt;-->
-            <!--<x-address title="" v-model="value" :list="addressData" placeholder="请选择地址">-->
-              <!--<template slot="title" scope="props">-->
-                <!--<i class="icon-address"></i>所在地区-->
-              <!--</template>-->
-            <!--</x-address>-->
-          <!--&lt;!&ndash;</group>&ndash;&gt;-->
-        <!--</div>-->
+        <div class="line"></div>
+        <group>
+          <x-address title="" v-model="value" :list="addressData" placeholder="请选择地址">
+            <template slot="title" scope="props">
+              <i class="icon-address"></i>所在地区
+            </template>
+          </x-address>
+        </group>
         <div class="list flex flex-align-items-center">
           <label>街道地址：</label><input type="text" placeholder="请输入街道地址" class="flex-grow-1">
         </div>
@@ -47,12 +46,13 @@
 </template>
 
 <script>
-  import { XButton, XAddress, ChinaAddressV3Data } from 'vux';
+  import { XButton, Group, XAddress, ChinaAddressV3Data } from 'vux';
 
 export default {
   name: 'addaddress',
   components: {
     XButton,
+    Group,
     XAddress,
     ChinaAddressV3Data,
   },
@@ -110,6 +110,10 @@ export default {
   }
 
   .head {
+    position: fixed;
+    top: 0;
+    z-index: 9999;
+    width: 100%;
     height: 50px;
     background-color: rgb(245,245,245);
     border-bottom: 1px solid rgb(235,235,235);
@@ -121,6 +125,7 @@ export default {
 
   .head a {
     text-decoration: none;
+    color: black;
     font-size: 16px;
   }
 
@@ -129,6 +134,7 @@ export default {
   }
 
   .content {
+    margin-top: 50px;
     height: calc(100vh - 110px);
   }
 
@@ -140,6 +146,7 @@ export default {
   .list {
     height: 60px;
     margin-left: 15px;
+    font-size: 17px;
     border-top: 1px solid rgb(235,235,235);
   }
 
@@ -149,12 +156,23 @@ export default {
 
   .list input {
     height: 100%;
-    font-size: 14px;
+    font-size: 17px;
     border: none;
   }
 
+  .line {
+    height: 1px;
+    margin-left: 15px;
+    background-color: rgb(235,235,235);
+  }
+
   .footer {
+    position: fixed;
+    position: relative;
+    bottom: 0;
+    /*z-index: -1;*/
     height: 60px;
+    width: 100%;
     background-color: rgb(245,245,245);
     border-top: 1px solid rgb(235,235,235);
   }
@@ -167,9 +185,18 @@ export default {
 </style>
 
 <style>
-  .weui-cell {
+  .weui-cells {
+    margin: 0 !important;
     height: 60px !important;
     padding: 8px 0 !important;
+  }
+
+  .weui-cells:before {
+    border-top: 0px !important;
+  }
+
+  .weui-cells:after {
+    border-bottom: 0px !important;
   }
 
   .vux-cell-box:before {

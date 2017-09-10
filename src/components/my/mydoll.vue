@@ -108,6 +108,7 @@ export default {
 
   .head a {
     text-decoration: none;
+    color: black;
     font-size: 16px;
   }
 

@@ -80,7 +80,7 @@ export default {
   methods: {
     addAddress: function () {
       this.$router.replace('/addaddress');
-//      this.$route.router.go('/addaddress');
+//      this.$router.replace('/address');
     },
     getJwt: function(name) {
       var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
@@ -133,6 +133,7 @@ export default {
 
   .head a {
     text-decoration: none;
+    color: black;
     font-size: 16px;
   }
 
