@@ -12,22 +12,23 @@
 
       <div class="content-list flex-grow-1 flex flex-wrap-wrap">
 
-        <div class="list-container flex flex-justify-content-center" v-for="(list, index) in glbList">
-          <a href="#" @click="onSelect(index)">
+        <div class="list-container flex flex-justify-content-center" v-for="(item, index) in glbList">
+          <a @click="onSelect(index)">
             <div class="img-container flex flex-direction-column">
-              <img :src=list.img alt="">
-              <h5 class="flex-grow-1" :class="{'none': list.scene.state != 'ready'}">
+              <img :src=item.profile.images[0] alt="">
+              <h5 class="flex-grow-1" :class="{'none': item.scene.state != 'ready'}">
                 空闲中
               </h5>
-              <h5 class="flex-grow-1" :class="{'none': list.scene.state != 'busy'}">
+              <h5 class="flex-grow-1" :class="{'none': item.scene.state != 'busy'}">
                 游戏中
               </h5>
-              <h5 class="flex-grow-1" :class="{'none': list.scene.state != 'sleep'}">
+              <h5 class="flex-grow-1" :class="{'none': item.scene.state != 'sleep'}">
                 待机中
               </h5>
             </div>
-            <h4>{{list.title}}</h4>
-            <h5>{{list.fee}}/次</h5>
+
+            <h4>{{item.profile.title}}</h4>
+            <h5>{{item.profile.fee}}/次</h5>
           </a>
         </div>
 
@@ -49,7 +50,8 @@ export default {
   },
   methods: {
     onSelect: function(index) {
-      //console.log(index);
+      //console.log(item);
+
       //这里是关键代码，将选取的游戏信息提交给native
       window.WebViewJavascriptBridge.callHandler(
         'onListItemSelect',
@@ -74,7 +76,7 @@ export default {
 //      }
       this.$http({
         method: 'GET',
-        url: "https://ucast.cc/api/v1/games",
+        url: "https://ucast.cc/api/v1/appclaw/scenes",
         headers: {
           Authorization: "bearer " + jwt
         }

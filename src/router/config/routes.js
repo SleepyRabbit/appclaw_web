@@ -60,9 +60,12 @@ export default [
           component: addaddress
         },
       ]
-    },
-    {
-      path: '*',
-      redirect: {path: '/my/view'},
     }
+/*
+,
+{
+  path: '*',
+  redirect: {path: '/my/view'},
+}
+*/
 ]
