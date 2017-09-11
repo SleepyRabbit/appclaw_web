@@ -6,8 +6,8 @@
 import list from '@/components/list'
 import detail from '@/components/detail'
 import my from '@/components/my'
-import my1 from '@/components/my2'
 import mydoll from '@/components/my/mydoll'
+import myrecord from '@/components/my/myrecord'
 import myaddress from '@/components/my/myaddress'
 import addaddress from '@/components/my/addaddress'
 
@@ -30,20 +30,32 @@ export default [
     {
       path: '/my',
       name: 'my',
-      component: my
+      component: my,
+      // children: [
+      //   {
+      //     path: '/my_doll',
+      //     name: 'mydoll',
+      //     component: mydoll
+      //   },
+      // ]
     },
     {
-      path: '/mydoll',
+      path: '/my_doll',
       name: 'mydoll',
       component: mydoll
     },
     {
-      path: '/myaddress',
+      path: '/my_record',
+      name: 'myrecord',
+      component: myrecord
+    },
+    {
+      path: '/my_address',
       name: 'myaddress',
       component: myaddress
     },
     {
-      path: '/addaddress',
+      path: '/add_address',
       name: 'addaddress',
       component: addaddress
     },

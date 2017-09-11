@@ -1,5 +1,5 @@
 <template>
-  <div class="my">
+  <div class="my box">
 
     <div class="head flex">
       <div class="head-left flex-shrink-0 flex flex-align-items-center">
@@ -22,16 +22,11 @@
 
     <div class="user-list overflow-y-scroll">
       <group>
-        <cell title="我的金币" :value="gold"><i slot="icon" class="icon-coin"></i></cell>
-        <cell title="我的娃娃" link="mydoll"><i slot="icon" class="icon-panda"></i></cell>
-        <cell title="我的地址" link="myaddress"><i slot="icon" class="icon-address"></i></cell>
+        <cell title="我的金币" :value="coin"><i slot="icon" class="icon-coin"></i></cell>
+        <cell title="我的抓取记录" link="my_record"><i slot="icon" class="icon-record"></i></cell>
+        <cell title="我的娃娃" link="my_doll"><i slot="icon" class="icon-panda"></i></cell>
+        <cell title="我的地址" link="my_address"><i slot="icon" class="icon-address"></i></cell>
         <cell title="分享" link="mydoll"><i slot="icon" class="icon-share"></i></cell>
-
-        <!--<x-address title="" v-model="value" :list="addressData" placeholder="请选择地址">-->
-          <!--<template slot="title" scope="props">-->
-            <!--<i class="icon-address"></i>地址-->
-          <!--</template>-->
-        <!--</x-address>-->
       </group>
     </div>
 
@@ -43,7 +38,9 @@
 </template>
 
 <script>
-import { Group, Cell } from 'vux';
+import Group from 'vux/src/components/group/';
+import Cell from 'vux/src/components/cell/';
+import { mapGetters } from 'vuex';
 
 export default {
   name: 'my',
@@ -53,16 +50,25 @@ export default {
   },
   data () {
     return {
-        gold: 20,
+        coin: 20,
     }
   },
   methods: {
       onSelect: function () {
         console.log(this.value);
+      },
+      init: function () {
+        console.log('init');
       }
+  },
+  computed: {
+    ...mapGetters([
+      'getJwt',
+    ])
   },
   created: function() {
     console.log("created!");
+    this.$nextTick(this.init, 100);
   }
 }
 </script>

@@ -14,7 +14,7 @@
 
     <div class="content overflow-y-auto">
       <div class="list-container" v-for="list in lists">
-        <a href="#/addaddress">
+        <a href="#/add_address">
           <div class="list-name flex flex-justify-content-space-between flex-align-items-center">
             <p>{{ list.name }}</p>
             <p>{{ list.tel }}</p>
@@ -34,10 +34,14 @@
 </template>
 
 <script>
-  import { XButton } from "vux"
+import { mapGetters } from 'vuex';
+import XButton from 'vux/src/components/x-button/';
 
 export default {
   name: 'myaddress',
+  components: {
+    XButton,
+  },
   data () {
     return {
         lists: [
@@ -74,28 +78,26 @@ export default {
         ],
     }
   },
-  components: {
-    XButton,
-  },
   methods: {
     addAddress: function () {
-      this.$router.replace('/addaddress');
+      this.$router.replace('/add_address');
 //      this.$router.replace('/address');
-    },
-    getJwt: function(name) {
-      var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
-      if (results)
-        return results[1] || 0;
-      else
-        return null;
     },
     init: function() {
       /* 获取jwt */
-      this.jwt = this.getJwt('jwt') || "";
-      if (!this.jwt) {
-        alert("该页面不能直接在浏览器打开哦~");
+      let jwt = this.getJwt;
+//      console.log(jwt);
+
+      if(jwt.length === 0) {
+        alert("jwt为空");
         return;
       }
+
+//      this.jwt = this.getJwt('jwt') || "";
+//      if (!this.jwt) {
+//        alert("该页面不能直接在浏览器打开哦~");
+//        return;
+//      }
       //console.log(this.jwt);
       this.$http({
         method: 'GET',
@@ -111,6 +113,11 @@ export default {
           alert("账户有问题哦，截图发给技术蝈蝈领金币哦~");
       });
     }
+  },
+  computed: {
+    ...mapGetters([
+      'getJwt',
+    ])
   },
   created: function() {
     console.log("created!");

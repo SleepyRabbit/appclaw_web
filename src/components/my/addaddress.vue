@@ -3,7 +3,7 @@
 
     <div class="head flex">
       <div class="head-left flex-shrink-0 flex flex-align-items-center">
-        <a href="#/myaddress" class="flex flex-justify-content-center flex-align-items-center"><i class="icon-back"></i>返回</a>
+        <a href="#/my_address" class="flex flex-justify-content-center flex-align-items-center"><i class="icon-back"></i>返回</a>
       </div>
       <div class="head-title flex-grow-1 flex flex-justify-content-center flex-align-items-center">
         <h3>添加地址</h3>
@@ -46,9 +46,12 @@
 </template>
 
 <script>
-  import { XButton, Group, XAddress, ChinaAddressV3Data } from 'vux';
+  import XButton from 'vux/src/components/x-button/';
+  import Group from 'vux/src/components/group/';
+  import XAddress from 'vux/src/components/x-address/';
+  import ChinaAddressV3Data from 'vux/src/datas/china_address_v3.json'
 
-export default {
+  export default {
   name: 'addaddress',
   components: {
     XButton,
@@ -134,8 +137,8 @@ export default {
   }
 
   .content {
-    margin-top: 50px;
-    height: calc(100vh - 110px);
+    padding-top: 50px;
+    height: calc(100vh - 60px);
   }
 
   .container {

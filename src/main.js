@@ -2,7 +2,8 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './App'
-import router from './router'
+import store from './vuex/store'
+import router from './router/router'
 import VueResource from 'vue-resource'
 import FastClick from 'fastclick'
 import './assets/css/common.css'
@@ -12,13 +13,24 @@ import './assets/icon/icomoon/style.css'
 Vue.use(VueResource);
 Vue.http.options.emulateJSON = true;
 
-Vue.config.productionTip = false
+Vue.config.productionTip = false;
+
+router.beforeEach((from, to, next) => {
+  "use strict";
+  // console.log(typeof(from.query.jwt));
+  if(typeof(from.query.jwt) != "undefined" ) {
+    // console.log("query!");
+    store.dispatch('setJwt', from.query.jwt);     //把jwt放到vuex store中进行存储
+  }
+  next();
+})
 
 FastClick.attach(document.body);
 
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
+  store,
   router,
   template: '<App/>',
   components: { App }

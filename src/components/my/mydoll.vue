@@ -37,12 +37,13 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
+
 export default {
   name: 'mydoll',
   data () {
     return {
       glbList: [],
-      jwt: '',
     }
   },
   methods: {
@@ -57,20 +58,21 @@ export default {
         }
       );
     },
-    getJwt: function(name) {
-      var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
-      if (results)
-        return results[1] || 0;
-      else
-        return null;
-    },
     init: function() {
       /* 获取jwt */
-      this.jwt = this.getJwt('jwt') || "";
-      if (!this.jwt) {
-        alert("该页面不能直接在浏览器打开哦~");
+      let jwt = this.getJwt;
+//      console.log(jwt);
+
+      if(jwt.length === 0) {
+        alert("jwt为空");
         return;
       }
+
+//      this.jwt = this.getJwt('jwt') || "";
+//      if (!this.jwt) {
+//        alert("该页面不能直接在浏览器打开哦~");
+//        return;
+//      }
       //console.log(this.jwt);
       this.$http({
         method: 'GET',
@@ -86,6 +88,11 @@ export default {
           alert("账户有问题哦，截图发给技术蝈蝈领金币哦~");
       });
     }
+  },
+  computed: {
+    ...mapGetters([
+      'getJwt',
+    ])
   },
   created: function() {
     console.log("created!");
