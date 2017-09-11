@@ -73,7 +73,7 @@ export default {
     ])
   },
   created: function() {
-    console.log("created!");
+//    console.log("created!");
     this.$nextTick(this.init, 100);
   }
 }

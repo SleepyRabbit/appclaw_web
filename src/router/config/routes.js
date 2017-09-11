@@ -6,17 +6,18 @@
 import list from '@/components/list'
 import detail from '@/components/detail'
 import my from '@/components/my'
+import view from '@/components/my/view'
 import mydoll from '@/components/my/mydoll'
 import myrecord from '@/components/my/myrecord'
 import myaddress from '@/components/my/myaddress'
 import addaddress from '@/components/my/addaddress'
 
 export default [
-    {
-      path: '/',
-      name: 'root',
-      component: my
-    },
+    // {
+    //   path: '/',
+    //   name: 'root',
+    //   component: my
+    // },
     {
       path: '/list',
       name: 'list',
@@ -31,32 +32,37 @@ export default [
       path: '/my',
       name: 'my',
       component: my,
-      // children: [
-      //   {
-      //     path: '/my_doll',
-      //     name: 'mydoll',
-      //     component: mydoll
-      //   },
-      // ]
+      redirect: {path: '/my/view'},      //进入home页面后自动重新定位至/home/dashboard
+      children: [
+        {
+          path: 'view',
+          name: 'view',
+          component: view
+        },
+        {
+          path: 'my_doll',
+          name: 'mydoll',
+          component: mydoll
+        },
+        {
+          path: 'my_record',
+          name: 'myrecord',
+          component: myrecord
+        },
+        {
+          path: 'my_address',
+          name: 'myaddress',
+          component: myaddress
+        },
+        {
+          path: 'add_address',
+          name: 'addaddress',
+          component: addaddress
+        },
+      ]
     },
     {
-      path: '/my_doll',
-      name: 'mydoll',
-      component: mydoll
-    },
-    {
-      path: '/my_record',
-      name: 'myrecord',
-      component: myrecord
-    },
-    {
-      path: '/my_address',
-      name: 'myaddress',
-      component: myaddress
-    },
-    {
-      path: '/add_address',
-      name: 'addaddress',
-      component: addaddress
-    },
+      path: '*',
+      redirect: {path: '/my/view'},
+    }
 ]

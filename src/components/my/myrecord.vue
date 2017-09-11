@@ -1,5 +1,5 @@
 <template>
-  <div class="myrecord box">
+  <div class="myrecord">
 
     <div class="head flex">
       <div class="head-left flex-shrink-0 flex flex-align-items-center">
@@ -12,8 +12,138 @@
       </div>
     </div>
 
-    <div class="content box overflow-y-auto">
+    <div class="content overflow-y-auto">
       <div class="container ">
+        <a @click="" class="list flex">
+          <div class="list-left flex flex-justify-content-center flex-align-items-center">
+            <img src="../../assets/img/cat.jpg" alt="">
+          </div>
+          <div class="list-center flex-grow-1 flex flex-direction-column flex-justify-content-center">
+            <h3>小恐龙</h3>
+            <p>2017/07/16</p>
+          </div>
+          <div class="list-right flex flex-justify-content-center flex-align-items-center">
+            <p>抓取成功</p>
+          </div>
+        </a>
+
+        <a @click="" class="list flex">
+          <div class="list-left flex flex-justify-content-center flex-align-items-center">
+            <img src="../../assets/img/cat.jpg" alt="">
+          </div>
+          <div class="list-center flex-grow-1 flex flex-direction-column flex-justify-content-center">
+            <h3>小恐龙</h3>
+            <p>2017/07/16</p>
+          </div>
+          <div class="list-right flex flex-justify-content-center flex-align-items-center">
+            <p>抓取成功</p>
+          </div>
+        </a>
+
+        <a @click="" class="list flex">
+          <div class="list-left flex flex-justify-content-center flex-align-items-center">
+            <img src="../../assets/img/cat.jpg" alt="">
+          </div>
+          <div class="list-center flex-grow-1 flex flex-direction-column flex-justify-content-center">
+            <h3>小恐龙</h3>
+            <p>2017/07/16</p>
+          </div>
+          <div class="list-right flex flex-justify-content-center flex-align-items-center">
+            <p>抓取成功</p>
+          </div>
+        </a>
+
+        <a @click="" class="list flex">
+          <div class="list-left flex flex-justify-content-center flex-align-items-center">
+            <img src="../../assets/img/cat.jpg" alt="">
+          </div>
+          <div class="list-center flex-grow-1 flex flex-direction-column flex-justify-content-center">
+            <h3>小恐龙</h3>
+            <p>2017/07/16</p>
+          </div>
+          <div class="list-right flex flex-justify-content-center flex-align-items-center">
+            <p>抓取成功</p>
+          </div>
+        </a>
+
+        <a @click="" class="list flex">
+          <div class="list-left flex flex-justify-content-center flex-align-items-center">
+            <img src="../../assets/img/cat.jpg" alt="">
+          </div>
+          <div class="list-center flex-grow-1 flex flex-direction-column flex-justify-content-center">
+            <h3>小恐龙</h3>
+            <p>2017/07/16</p>
+          </div>
+          <div class="list-right flex flex-justify-content-center flex-align-items-center">
+            <p>抓取成功</p>
+          </div>
+        </a>
+
+        <a @click="" class="list flex">
+          <div class="list-left flex flex-justify-content-center flex-align-items-center">
+            <img src="../../assets/img/cat.jpg" alt="">
+          </div>
+          <div class="list-center flex-grow-1 flex flex-direction-column flex-justify-content-center">
+            <h3>小恐龙</h3>
+            <p>2017/07/16</p>
+          </div>
+          <div class="list-right flex flex-justify-content-center flex-align-items-center">
+            <p>抓取成功</p>
+          </div>
+        </a>
+
+        <a @click="" class="list flex">
+          <div class="list-left flex flex-justify-content-center flex-align-items-center">
+            <img src="../../assets/img/cat.jpg" alt="">
+          </div>
+          <div class="list-center flex-grow-1 flex flex-direction-column flex-justify-content-center">
+            <h3>小恐龙</h3>
+            <p>2017/07/16</p>
+          </div>
+          <div class="list-right flex flex-justify-content-center flex-align-items-center">
+            <p>抓取成功</p>
+          </div>
+        </a>
+
+        <a @click="" class="list flex">
+          <div class="list-left flex flex-justify-content-center flex-align-items-center">
+            <img src="../../assets/img/cat.jpg" alt="">
+          </div>
+          <div class="list-center flex-grow-1 flex flex-direction-column flex-justify-content-center">
+            <h3>小恐龙</h3>
+            <p>2017/07/16</p>
+          </div>
+          <div class="list-right flex flex-justify-content-center flex-align-items-center">
+            <p>抓取成功</p>
+          </div>
+        </a>
+
+        <a @click="" class="list flex">
+          <div class="list-left flex flex-justify-content-center flex-align-items-center">
+            <img src="../../assets/img/cat.jpg" alt="">
+          </div>
+          <div class="list-center flex-grow-1 flex flex-direction-column flex-justify-content-center">
+            <h3>小恐龙</h3>
+            <p>2017/07/16</p>
+          </div>
+          <div class="list-right flex flex-justify-content-center flex-align-items-center">
+            <p>抓取成功</p>
+          </div>
+        </a>
+
+        <a @click="" class="list flex">
+          <div class="list-left flex flex-justify-content-center flex-align-items-center">
+            <img src="../../assets/img/cat.jpg" alt="">
+          </div>
+          <div class="list-center flex-grow-1 flex flex-direction-column flex-justify-content-center">
+            <h3>小恐龙</h3>
+            <p>2017/07/16</p>
+          </div>
+          <div class="list-right flex flex-justify-content-center flex-align-items-center">
+            <p>抓取成功</p>
+          </div>
+        </a>
+
         <a @click="" class="list flex">
           <div class="list-left flex flex-justify-content-center flex-align-items-center">
             <img src="../../assets/img/cat.jpg" alt="">
@@ -93,7 +223,7 @@ import { mapGetters } from 'vuex';
     ])
   },
   created: function() {
-    console.log("created!");
+//    console.log("created!");
 //    this.$nextTick(this.init, 100);
   }
 }
@@ -126,8 +256,10 @@ import { mapGetters } from 'vuex';
   }
 
   .content {
-    display: block;
-    padding-top: 50px;
+    position: absolute;
+    top: 50px;
+    width: 100%;
+    height: calc(100vh - 50px);
     background-color: rgb(255,234,10);
   }
 

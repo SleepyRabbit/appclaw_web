@@ -1,9 +1,8 @@
 <template>
   <div class="addaddress">
-
     <div class="head flex">
       <div class="head-left flex-shrink-0 flex flex-align-items-center">
-        <a href="#/my_address" class="flex flex-justify-content-center flex-align-items-center"><i class="icon-back"></i>返回</a>
+        <a href="#/my/my_address" class="flex flex-justify-content-center flex-align-items-center"><i class="icon-back"></i>返回</a>
       </div>
       <div class="head-title flex-grow-1 flex flex-justify-content-center flex-align-items-center">
         <h3>添加地址</h3>
@@ -20,7 +19,6 @@
         <div class="list flex flex-align-items-center">
           <label>手机号码：</label><input type="text" placeholder="请输入手机号码" class="flex-grow-1">
         </div>
-        <div class="line"></div>
         <group>
           <x-address title="" v-model="value" :list="addressData" placeholder="请选择地址">
             <template slot="title" scope="props">
@@ -28,6 +26,7 @@
             </template>
           </x-address>
         </group>
+        <div class="line"></div>
         <div class="list flex flex-align-items-center">
           <label>街道地址：</label><input type="text" placeholder="请输入街道地址" class="flex-grow-1">
         </div>
@@ -100,7 +99,7 @@
     }
   },
   created: function() {
-    console.log("created!");
+//    console.log("created!");
 //    this.$nextTick(this.init, 100);
   }
 }
@@ -137,8 +136,14 @@
   }
 
   .content {
-    padding-top: 50px;
-    height: calc(100vh - 60px);
+    position: absolute;
+    top: 50px;
+    width: 100%;
+    height: calc(100vh - 110px);
+  }
+
+  .content {
+    height: calc(100vh - 110px);
   }
 
   .container {
@@ -150,11 +155,7 @@
     height: 60px;
     margin-left: 15px;
     font-size: 17px;
-    border-top: 1px solid rgb(235,235,235);
-  }
-
-  .list:first-child {
-    border: none;
+    border-bottom: 1px solid rgb(235,235,235);
   }
 
   .list input {
@@ -170,10 +171,8 @@
   }
 
   .footer {
-    position: fixed;
-    position: relative;
+    position: absolute;
     bottom: 0;
-    /*z-index: -1;*/
     height: 60px;
     width: 100%;
     background-color: rgb(245,245,245);

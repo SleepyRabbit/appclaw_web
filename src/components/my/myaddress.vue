@@ -1,6 +1,5 @@
 <template>
   <div class="myaddress">
-
     <div class="head flex">
       <div class="head-left flex-shrink-0 flex flex-align-items-center">
         <a href="#/my" class="flex flex-justify-content-center flex-align-items-center"><i class="icon-back"></i>返回</a>
@@ -80,7 +79,7 @@ export default {
   },
   methods: {
     addAddress: function () {
-      this.$router.replace('/add_address');
+      this.$router.replace('/my/add_address');
 //      this.$router.replace('/address');
     },
     init: function() {
@@ -120,7 +119,7 @@ export default {
     ])
   },
   created: function() {
-    console.log("created!");
+//    console.log("created!");
 //    this.$nextTick(this.init, 100);
   }
 }
@@ -129,6 +128,10 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
   .head {
+    position: fixed;
+    top: 0;
+    z-index: 9999;
+    width: 100%;
     height: 50px;
     background-color: rgb(245,245,245);
     border-bottom: 1px solid rgb(235,235,235);
@@ -149,8 +152,10 @@ export default {
   }
 
   .content {
+    position: absolute;
+    top: 50px;
+    width: 100%;
     height: calc(100vh - 110px);
-    background-color: rgb(245,245,245);
   }
 
   .list-container {
@@ -183,7 +188,10 @@ export default {
   }
 
   .footer {
+    position: absolute;
+    bottom: 0;
     height: 60px;
+    width: 100%;
     background-color: rgb(245,245,245);
     border-top: 1px solid rgb(235,235,235);
   }
