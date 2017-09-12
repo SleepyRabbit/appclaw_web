@@ -1,10 +1,12 @@
 # appclaw_web使用说明
 
-## "我的"
+## "我的"页面
 ![image](https://github.com/SleepyRabbit/img/blob/master/appclaw_web/my.jpeg)  
 ---
 "我的"页面不会向后台发送数据请求。
-## "我的金币"
+
+
+## "我的金币"页面
 ![image](https://github.com/SleepyRabbit/img/blob/master/appclaw_web/my_coin.jpeg)  
 ---
 数据请求：
@@ -20,7 +22,8 @@ this.$http({
   coin: 20,  
 }
 
-## "我的抓取记录"
+
+## "我的抓取记录"页面
 ![image](https://github.com/SleepyRabbit/img/blob/master/appclaw_web/my_coin.jpeg)  
 ---
 <pre><code>
