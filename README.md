@@ -3,7 +3,6 @@
 ## "我的"页面
 ![image](https://github.com/SleepyRabbit/img/blob/master/appclaw_web/my.jpeg)  
 ---
-"我的"页面不会向后台发送数据请求。
 <pre><code>
 "我的"页面不会向后台发送数据请求。
 </code></pre>
