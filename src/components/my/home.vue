@@ -1,9 +1,9 @@
 <template>
-  <div class="view">
+  <div class="home">
 
     <div class="head flex">
       <div class="head-left flex-shrink-0 flex flex-align-items-center">
-        <a href="#" class="flex flex-justify-content-center flex-align-items-center"><i class="icon-back"></i>返回</a>
+        <a @click="onBack" class="flex flex-justify-content-center flex-align-items-center"><i class="icon-back"></i>返回</a>
       </div>
       <div class="head-title flex-grow-1 flex flex-justify-content-center flex-align-items-center">
         <h3>我的</h3>
@@ -23,36 +23,43 @@
 
       <div class="user-list overflow-y-scroll">
         <div class="container">
-          <div class="list flex flex-align-items-center flex-justify-content-space-between">
+          <router-link to="coin" class="list flex flex-align-items-center flex-justify-content-space-between">
             <span class="list-left flex flex-align-items-center"><i class="icon-coin"></i>我的金币</span>
             <div class="list-right flex flex-align-items-center">
               <p>{{ coin }}</p>
             </div>
-          </div>
+          </router-link>
 
-          <router-link to="my_record" class="list flex flex-align-items-center flex-justify-content-space-between">
+          <router-link to="record" class="list flex flex-align-items-center flex-justify-content-space-between">
             <span class="list-left flex flex-align-items-center"><i class="icon-record"></i>我的抓取记录</span>
             <div class="list-right flex flex-align-items-center">
               <i class="icon icon-more"></i>
             </div>
           </router-link>
 
-          <router-link to="my_doll" class="list flex flex-align-items-center flex-justify-content-space-between">
+          <router-link to="doll" class="list flex flex-align-items-center flex-justify-content-space-between">
             <span class="list-left flex flex-align-items-center"><i class="icon-panda"></i>我的娃娃</span>
             <div class="list-right flex flex-align-items-center">
               <i class="icon icon-more"></i>
             </div>
           </router-link>
 
-          <router-link to="my_address" class="list flex flex-align-items-center flex-justify-content-space-between">
+          <router-link to="address" class="list flex flex-align-items-center flex-justify-content-space-between">
             <span class="list-left flex flex-align-items-center"><i class="icon-address"></i>我的地址</span>
             <div class="list-right flex flex-align-items-center">
               <i class="icon icon-more"></i>
             </div>
           </router-link>
 
-          <router-link to="my_doll" class="list flex flex-align-items-center flex-justify-content-space-between">
+          <router-link to="doll" class="list flex flex-align-items-center flex-justify-content-space-between">
             <span class="list-left flex flex-align-items-center"><i class="icon-share"></i>分享</span>
+            <div class="list-right flex flex-align-items-center">
+              <i class="icon icon-more"></i>
+            </div>
+          </router-link>
+
+          <router-link to="about" class="list flex flex-align-items-center flex-justify-content-space-between">
+            <span class="list-left flex flex-align-items-center"><i class="icon-about"></i>关于我们</span>
             <div class="list-right flex flex-align-items-center">
               <i class="icon icon-more"></i>
             </div>
@@ -73,13 +80,16 @@
   import { mapGetters } from 'vuex';
 
   export default {
-    name: 'view',
+    name: 'home',
     data () {
       return {
         coin: 20,
       }
     },
     methods: {
+      onBack: function () {
+        this.$router.back(-1);
+      },
       onSelect: function () {
         console.log(this.value);
       },

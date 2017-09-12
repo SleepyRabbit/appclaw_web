@@ -5,12 +5,19 @@
 
 import list from '@/components/list'
 import detail from '@/components/detail'
+
 import my from '@/components/my'
-import view from '@/components/my/view'
-import mydoll from '@/components/my/mydoll'
-import myrecord from '@/components/my/myrecord'
-import myaddress from '@/components/my/myaddress'
-import addaddress from '@/components/my/addaddress'
+import my_home from '@/components/my/home'
+import my_doll from '@/components/my/doll'
+import my_coin from '@/components/my/coin'
+import my_record from '@/components/my/record'
+
+import my_about from '@/components/my/about'
+import my_about_home from '@/components/my/about/home'
+
+import my_address from '@/components/my/address'
+import my_address_home from '@/components/my/address/home'
+import my_address_add from '@/components/my/address/add'
 
 export default [
     // {
@@ -32,40 +39,63 @@ export default [
       path: '/my',
       name: 'my',
       component: my,
-      redirect: {path: '/my/view'},      //进入home页面后自动重新定位至/home/dashboard
+      redirect: {path: '/my/home'},
       children: [
         {
-          path: 'view',
-          name: 'view',
-          component: view
+          path: 'home',
+          name: 'my_home',
+          component: my_home
         },
         {
-          path: 'my_doll',
-          name: 'mydoll',
-          component: mydoll
+          path: 'doll',
+          name: 'my_doll',
+          component: my_doll
         },
         {
-          path: 'my_record',
-          name: 'myrecord',
-          component: myrecord
+          path: 'coin',
+          name: 'my_coin',
+          component: my_coin
         },
         {
-          path: 'my_address',
-          name: 'myaddress',
-          component: myaddress
+          path: 'record',
+          name: 'my_record',
+          component: my_record
         },
         {
-          path: 'add_address',
-          name: 'addaddress',
-          component: addaddress
+          path: 'address',
+          name: 'my_address',
+          component: my_address,
+          redirect: {path: '/my/address/home'},
+          children: [
+            {
+              path: 'home',
+              name: 'my_address_home',
+              component: my_address_home
+            },
+            {
+              path: 'add',
+              name: 'my_address_add',
+              component: my_address_add
+            }
+          ]
+        },
+        {
+          path: 'about',
+          name: 'my_about',
+          component: my_about,
+          redirect: {path: '/my/about/home'},
+          children: [
+            {
+              path: 'home',
+              name: 'my_about_home',
+              component: my_about_home
+            },
+          ]
         },
       ]
-    }
-/*
-,
-{
-  path: '*',
-  redirect: {path: '/my/view'},
-}
-*/
+    },
+    {
+      path: '*',
+      redirect: {path: '/my/home'},
+    },
 ]

@@ -1,8 +1,8 @@
 <template>
-  <div class="myaddress">
+  <div class="home">
     <div class="head flex">
       <div class="head-left flex-shrink-0 flex flex-align-items-center">
-        <a href="#/my" class="flex flex-justify-content-center flex-align-items-center"><i class="icon-back"></i>返回</a>
+        <a @click="onBack" class="flex flex-justify-content-center flex-align-items-center"><i class="icon-back"></i>返回</a>
       </div>
       <div class="head-title flex-grow-1 flex flex-justify-content-center flex-align-items-center">
         <h3>管理收货地址</h3>
@@ -13,7 +13,7 @@
 
     <div class="content overflow-y-auto">
       <div class="list-container" v-for="list in lists">
-        <a href="#/add_address">
+        <a href="#">
           <div class="list-name flex flex-justify-content-space-between flex-align-items-center">
             <p>{{ list.name }}</p>
             <p>{{ list.tel }}</p>
@@ -26,7 +26,7 @@
     </div>
 
     <div class="footer flex flex-justify-content-center flex-align-items-center">
-      <x-button @click.native="addAddress">+添加地址</x-button>
+      <router-link to="add" class="flex flex-justify-content-center flex-align-items-center">添加地址</router-link>
     </div>
 
   </div>
@@ -34,13 +34,9 @@
 
 <script>
 import { mapGetters } from 'vuex';
-import XButton from 'vux/src/components/x-button/';
 
 export default {
-  name: 'myaddress',
-  components: {
-    XButton,
-  },
+  name: 'home',
   data () {
     return {
         lists: [
@@ -78,8 +74,11 @@ export default {
     }
   },
   methods: {
+    onBack: function () {
+      this.$router.back(-1);
+    },
     addAddress: function () {
-      this.$router.replace('/my/add_address');
+      this.$router.replace('/my/my_address/add_address');
 //      this.$router.replace('/address');
     },
     init: function() {
@@ -196,9 +195,15 @@ export default {
     border-top: 1px solid rgb(235,235,235);
   }
 
-  .footer button {
+  .footer a {
     background-color: white;
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
     width: 80%;
+    height: 40px;
+    border: 1px solid rgb(235,235,235);
+    border-radius: 5px;
   }
 
 </style>

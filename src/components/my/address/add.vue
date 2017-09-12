@@ -1,8 +1,8 @@
 <template>
-  <div class="addaddress">
+  <div class="add">
     <div class="head flex">
       <div class="head-left flex-shrink-0 flex flex-align-items-center">
-        <a href="#/my/my_address" class="flex flex-justify-content-center flex-align-items-center"><i class="icon-back"></i>返回</a>
+        <a @click="onBack" class="flex flex-justify-content-center flex-align-items-center"><i class="icon-back"></i>返回</a>
       </div>
       <div class="head-title flex-grow-1 flex flex-justify-content-center flex-align-items-center">
         <h3>添加地址</h3>
@@ -38,22 +38,21 @@
     </div>
 
     <div class="footer flex flex-justify-content-center flex-align-items-center">
-      <x-button @click.native="saveAddress">保存地址</x-button>
+      <!--<router-link to="add_address" class="flex flex-justify-content-center flex-align-items-center">保存</router-link>-->
+      <router-link to="" class="flex flex-justify-content-center flex-align-items-center">保存</router-link>
     </div>
 
   </div>
 </template>
 
 <script>
-  import XButton from 'vux/src/components/x-button/';
   import Group from 'vux/src/components/group/';
   import XAddress from 'vux/src/components/x-address/';
   import ChinaAddressV3Data from 'vux/src/datas/china_address_v3.json'
 
   export default {
-  name: 'addaddress',
+  name: 'add',
   components: {
-    XButton,
     Group,
     XAddress,
     ChinaAddressV3Data,
@@ -65,6 +64,9 @@
     }
   },
   methods: {
+    onBack: function () {
+      this.$router.back(-1);
+    },
     saveAddress: function () {
 
     },
@@ -99,6 +101,7 @@
     }
   },
   created: function() {
+    console.log(this.$router);
 //    console.log("created!");
 //    this.$nextTick(this.init, 100);
   }
@@ -179,9 +182,15 @@
     border-top: 1px solid rgb(235,235,235);
   }
 
-  .footer button {
+  .footer a {
     background-color: white;
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
     width: 80%;
+    height: 40px;
+    border: 1px solid rgb(235,235,235);
+    border-radius: 5px;
   }
 
 </style>
