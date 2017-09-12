@@ -33,7 +33,7 @@ this.$http({
 ---
 
 ## "我的抓取记录"页面
-![image](https://github.com/SleepyRabbit/img/blob/master/appclaw_web/my_coin.jpeg)  
+![image](https://github.com/SleepyRabbit/img/blob/master/appclaw_web/my_record.jpeg)  
 ---
 <pre><code>
 路径： #/my/record
