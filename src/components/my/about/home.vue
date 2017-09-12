@@ -6,18 +6,17 @@
         <a @click="onBack" class="flex flex-justify-content-center flex-align-items-center"><i class="icon-back"></i>返回</a>
       </div>
       <div class="head-title flex-grow-1 flex flex-justify-content-center flex-align-items-center">
-        <h3>我的</h3>
+        <h3>关于我们</h3>
       </div>
       <div class="head-right flex-shrink-0 flex flex-justify-content-center flex-align-items-center">
       </div>
     </div>
 
     <div class="content">
-      <div class="content-banner flex-shrink-0 flex flex-justify-content-center">
-        <div class="banner-content flex flex-direction-column flex-align-items-center">
+      <div class="content-banner flex flex-justify-content-center">
+        <div class="banner-content flex flex-direction-column flex-justify-content-center flex-align-items-center">
           <img src="../../../assets/img/user1.jpg" alt="">
           <h4>哆啦a梦</h4>
-          <h5>共抓中0次</h5>
         </div>
       </div>
 
@@ -143,11 +142,8 @@
   }
 
   .banner-content h4 {
-    font-weight: bold;
-  }
-
-  .banner-content h5 {
-    font-size: 11px;
+    /*font-weight: bold;*/
+    /*color: rgb(235,235,235);*/
   }
 
   .user-list {

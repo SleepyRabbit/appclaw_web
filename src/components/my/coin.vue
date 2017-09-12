@@ -248,7 +248,7 @@ import { mapGetters } from 'vuex';
   }
 
   .list {
-    height: 60px;
+    height: 50px;
     margin: 0 15px;
     border-bottom: 1px solid rgb(235, 235, 235);
   }

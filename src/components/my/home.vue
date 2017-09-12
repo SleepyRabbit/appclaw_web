@@ -13,7 +13,7 @@
     </div>
 
     <div class="content">
-      <div class="content-banner flex-shrink-0 flex flex-justify-content-center">
+      <div class="content-banner flex flex-justify-content-center">
         <div class="banner-content flex flex-direction-column flex-align-items-center">
           <img src="../../assets/img/user1.jpg" alt="">
           <h4>哆啦a梦</h4>
@@ -26,7 +26,8 @@
           <router-link to="coin" class="list flex flex-align-items-center flex-justify-content-space-between">
             <span class="list-left flex flex-align-items-center"><i class="icon-coin"></i>我的金币</span>
             <div class="list-right flex flex-align-items-center">
-              <p>{{ coin }}</p>
+              <i class="icon icon-more"></i>
+              <!--<p>{{ coin }}</p>-->
             </div>
           </router-link>
 
