@@ -4,7 +4,11 @@
 ![image](https://github.com/SleepyRabbit/img/blob/master/appclaw_web/my.jpeg)  
 ---
 <pre><code>
-"我的"页面不会向后台发送数据请求。
+路由： #/my  #/my/home
+数据请求：
+null
+数据返回:
+null
 </code></pre>
 ---
 
@@ -12,6 +16,7 @@
 ![image](https://github.com/SleepyRabbit/img/blob/master/appclaw_web/my_coin.jpeg)  
 ---
 <pre><code>
+路由： #/my/coin
 数据请求：
 this.$http({  
             method: 'GET',  
@@ -31,6 +36,7 @@ this.$http({
 ![image](https://github.com/SleepyRabbit/img/blob/master/appclaw_web/my_coin.jpeg)  
 ---
 <pre><code>
+路由： #/my/record
 数据请求：   
 this.$http({
         method: 'GET',
