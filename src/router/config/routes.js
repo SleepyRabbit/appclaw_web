@@ -10,6 +10,8 @@ import my from '@/components/my'
 import my_home from '@/components/my/home'
 import my_doll from '@/components/my/doll'
 import my_coin from '@/components/my/coin'
+import my_coin_home from '@/components/my/coin/home'
+import my_coin_detail from '@/components/my/coin/detail'
 import my_record from '@/components/my/record'
 
 import my_about from '@/components/my/about'
@@ -54,7 +56,20 @@ export default [
         {
           path: 'coin',
           name: 'my_coin',
-          component: my_coin
+          component: my_coin,
+          redirect: {path: '/my/coin/home'},
+          children: [
+            {
+              path: 'home',
+              name: 'my_coin_home',
+              component: my_coin_home
+            },
+            {
+              path: 'detail',
+              name: 'my_coin_detail',
+              component: my_coin_detail
+            }
+          ]
         },
         {
           path: 'record',

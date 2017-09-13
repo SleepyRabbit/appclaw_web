@@ -246,7 +246,7 @@ import { mapGetters } from 'vuex';
   }
 
   .head-left, .head-right {
-    width: 60px;
+    width: 80px;
   }
 
   .head a {
