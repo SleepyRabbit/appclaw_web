@@ -1,15 +1,14 @@
 <template>
-  <div class="home">
+  <div class="recharge">
 
     <div class="head flex">
       <div class="head-left flex-shrink-0 flex flex-align-items-center">
         <a @click="onBack" class="flex flex-justify-content-center flex-align-items-center"><i class="icon-back"></i>返回</a>
       </div>
       <div class="head-title flex-grow-1 flex flex-justify-content-center flex-align-items-center">
-        <h3>我的金币</h3>
+        <h3>充值</h3>
       </div>
       <div class="head-right flex-shrink-0 flex flex-justify-content-center flex-align-items-center">
-        <router-link to="detail">交易记录</router-link>
       </div>
     </div>
 
@@ -18,24 +17,19 @@
         <h1>20</h1>
       </div>
 
-      <div class="container overflow-y-scroll">
-        <a @click="" class="list flex flex-justify-content-space-between">
-          <div class="list-left flex flex-direction-column flex-justify-content-center">
-            <h3>房间 小恐龙 游戏扣费：16</h3>
-            <p>2017/07/16</p>
-          </div>
-          <div class="list-right flex flex-justify-content-center flex-align-items-center">
-            <p>-16</p>
+      <div class="container">
+        <a @click="onSelect(index)" v-for="(item, index) in items">
+          <div :class="index === sel ? 'sel':'nosel'" class="list flex flex-justify-content-space-between flex-align-items-center">
+            <div class="list-left">{{item.coin}}</div>
+            <div class="list-right">{{item.charge}}</div>
           </div>
         </a>
       </div>
 
       <div class="footer">
-        <router-link to="detail" class="flex flex-align-items-center flex-justify-content-center"><h3>充值</h3></router-link>
+        <a @click="onCharge" class="flex flex-align-items-center flex-justify-content-center"><h3>充值</h3></a>
       </div>
     </div>
-
-
   </div>
 </template>
 
@@ -43,15 +37,50 @@
 import { mapGetters } from 'vuex';
 
   export default {
-  name: 'home',
+  name: 'recharge',
   data () {
     return {
-        recordList: [],
+        sel: 100,
+        fee: 0,
+        items: [
+          {
+              coin: 50,
+              charge: "5元",
+          },
+          {
+            coin: 120,
+            charge: "10元",
+          },
+          {
+            coin: 250,
+            charge: "20元",
+          }
+        ],
     }
   },
   methods: {
     onBack: function () {
       this.$router.back(-1);
+    },
+    onSelect: function (index) {
+      this.sel = index;
+      switch(index) {
+        case 0:
+            this.fee = 5;
+            break;
+        case 1:
+            this.fee = 10;
+            break;
+        case 2:
+            this.fee = 20;
+            break;
+        default:
+            break;
+      }
+    },
+    onCharge: function () {
+      let path = "https://ucast.cc/portal/appclaw/pay.html?fee=" + this.fee;
+      console.log(path);
     },
     init: function() {
       /* 获取jwt */
@@ -109,7 +138,7 @@ import { mapGetters } from 'vuex';
   }
 
   .head-left, .head-right {
-    width: 80px;
+    width: 60px;
   }
 
   .head a {
@@ -126,12 +155,10 @@ import { mapGetters } from 'vuex';
     position: absolute;
     top: 50px;
     width: 100%;
-    /*height: calc(100vh - 100px);*/
-    background-color: rgb(255,234,10);
   }
 
   .content-banner {
-    height: 120px;
+    height: 150px;
     border-bottom: 1px solid rgb(235,235,235);
     background-color: rgb(5,188,255);
   }
@@ -142,8 +169,9 @@ import { mapGetters } from 'vuex';
   }
 
   .container {
-    height: calc(100vh - 220px);
-    background-color: white;
+    height: calc(100vh - 250px);
+    background-color: rgb(245,245,245);
+    padding-top: 20px;
     border: 0;
     border-radius: 4px;
   }
@@ -152,9 +180,29 @@ import { mapGetters } from 'vuex';
     text-decoration: none;
   }
 
+  .sel {
+    background-color: rgb(255,103,0);
+    color: white;
+    box-shadow: 3px 3px 5px rgb(205,210,210);
+  }
+
+  .nosel {
+    background-color: white;
+    color: black;
+  }
+
+  /*.container a:hover .list{*/
+    /*!*background-color: rgb(5,188,255);*!*/
+    /*background-color: rgb(255,103,0);*/
+    /*color: white;*/
+    /*box-shadow: 3px 3px 5px rgb(205,210,210);*/
+  /*}*/
+
   .list {
-    height: 50px;
-    margin: 0 15px;
+    height: 60px;
+    width: 100%;
+    padding: 0 15px;
+    font-size: 20px;
     border-bottom: 1px solid rgb(235, 235, 235);
   }
 
@@ -187,12 +235,7 @@ import { mapGetters } from 'vuex';
     height: 50px;
     width: 100%;
     padding: 0 10px;
-    /*background-color: white;*/
-    border-top: 1px solid rgb(223,223,223);
-    border-bottom: 1px solid rgb(223,223,223);
-  }
-
-  .footer h3 {
     color: white;
+    border-bottom: 1px solid rgb(223,223,223);
   }
 </style>

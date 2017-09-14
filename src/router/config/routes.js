@@ -10,9 +10,8 @@ import my from '@/components/my'
 import my_home from '@/components/my/home'
 import my_doll from '@/components/my/doll'
 import my_coin from '@/components/my/coin'
-import my_coin_home from '@/components/my/coin/home'
-import my_coin_detail from '@/components/my/coin/detail'
 import my_record from '@/components/my/record'
+import my_recharge from '@/components/my/recharge'
 
 import my_about from '@/components/my/about'
 import my_about_home from '@/components/my/about/home'
@@ -56,25 +55,17 @@ export default [
         {
           path: 'coin',
           name: 'my_coin',
-          component: my_coin,
-          redirect: {path: '/my/coin/home'},
-          children: [
-            {
-              path: 'home',
-              name: 'my_coin_home',
-              component: my_coin_home
-            },
-            {
-              path: 'detail',
-              name: 'my_coin_detail',
-              component: my_coin_detail
-            }
-          ]
+          component: my_coin
         },
         {
           path: 'record',
           name: 'my_record',
           component: my_record
+        },
+        {
+          path: 'recharge',
+          name: 'my_recharge',
+          component: my_recharge
         },
         {
           path: 'address',
