@@ -39,7 +39,7 @@
           </router-link>
 
           <router-link to="record" class="list flex flex-align-items-center flex-justify-content-space-between">
-            <span class="list-left flex flex-align-items-center"><i class="icon-record"></i>我的抓取记录</span>
+            <span class="list-left flex flex-align-items-center"><i class="icon-record"></i>抓取记录</span>
             <div class="list-right flex flex-align-items-center">
               <i class="icon icon-more"></i>
             </div>
@@ -91,7 +91,6 @@
     name: 'home',
     data () {
       return {
-        coin: 20,
       }
     },
     methods: {

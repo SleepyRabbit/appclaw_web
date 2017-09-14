@@ -19,113 +19,13 @@
       </div>
 
       <div class="container overflow-y-scroll">
-        <a @click="" class="list flex flex-justify-content-space-between">
+        <a @click="" class="list flex flex-justify-content-space-between" v-for="item in items">
           <div class="list-left flex flex-direction-column flex-justify-content-center">
-            <h3>房间 小恐龙 游戏扣费：16</h3>
-            <p>2017/07/16</p>
+            <h3>{{item.content}}</h3>
+            <p>{{item.time}}</p>
           </div>
           <div class="list-right flex flex-justify-content-center flex-align-items-center">
-            <p>-16</p>
-          </div>
-        </a>
-
-        <a @click="" class="list flex flex-justify-content-space-between">
-          <div class="list-left flex flex-direction-column flex-justify-content-center">
-            <h3>房间 小恐龙 游戏扣费：16</h3>
-            <p>2017/07/16</p>
-          </div>
-          <div class="list-right flex flex-justify-content-center flex-align-items-center">
-            <p>-16</p>
-          </div>
-        </a>
-
-        <a @click="" class="list flex flex-justify-content-space-between">
-          <div class="list-left flex flex-direction-column flex-justify-content-center">
-            <h3>房间 小恐龙 游戏扣费：16</h3>
-            <p>2017/07/16</p>
-          </div>
-          <div class="list-right flex flex-justify-content-center flex-align-items-center">
-            <p>-16</p>
-          </div>
-        </a>
-
-        <a @click="" class="list flex flex-justify-content-space-between">
-          <div class="list-left flex flex-direction-column flex-justify-content-center">
-            <h3>房间 小恐龙 游戏扣费：16</h3>
-            <p>2017/07/16</p>
-          </div>
-          <div class="list-right flex flex-justify-content-center flex-align-items-center">
-            <p>-16</p>
-          </div>
-        </a>
-
-        <a @click="" class="list flex flex-justify-content-space-between">
-          <div class="list-left flex flex-direction-column flex-justify-content-center">
-            <h3>房间 小恐龙 游戏扣费：16</h3>
-            <p>2017/07/16</p>
-          </div>
-          <div class="list-right flex flex-justify-content-center flex-align-items-center">
-            <p>-16</p>
-          </div>
-        </a>
-
-        <a @click="" class="list flex flex-justify-content-space-between">
-          <div class="list-left flex flex-direction-column flex-justify-content-center">
-            <h3>房间 小恐龙 游戏扣费：16</h3>
-            <p>2017/07/16</p>
-          </div>
-          <div class="list-right flex flex-justify-content-center flex-align-items-center">
-            <p>-16</p>
-          </div>
-        </a>
-
-        <a @click="" class="list flex flex-justify-content-space-between">
-          <div class="list-left flex flex-direction-column flex-justify-content-center">
-            <h3>房间 小恐龙 游戏扣费：16</h3>
-            <p>2017/07/16</p>
-          </div>
-          <div class="list-right flex flex-justify-content-center flex-align-items-center">
-            <p>-16</p>
-          </div>
-        </a>
-
-        <a @click="" class="list flex flex-justify-content-space-between">
-          <div class="list-left flex flex-direction-column flex-justify-content-center">
-            <h3>房间 小恐龙 游戏扣费：16</h3>
-            <p>2017/07/16</p>
-          </div>
-          <div class="list-right flex flex-justify-content-center flex-align-items-center">
-            <p>-16</p>
-          </div>
-        </a>
-
-        <a @click="" class="list flex flex-justify-content-space-between">
-          <div class="list-left flex flex-direction-column flex-justify-content-center">
-            <h3>房间 小恐龙 游戏扣费：16</h3>
-            <p>2017/07/16</p>
-          </div>
-          <div class="list-right flex flex-justify-content-center flex-align-items-center">
-            <p>-16</p>
-          </div>
-        </a>
-
-        <a @click="" class="list flex flex-justify-content-space-between">
-          <div class="list-left flex flex-direction-column flex-justify-content-center">
-            <h3>房间 小恐龙 游戏扣费：16</h3>
-            <p>2017/07/16</p>
-          </div>
-          <div class="list-right flex flex-justify-content-center flex-align-items-center">
-            <p>-16</p>
-          </div>
-        </a>
-
-        <a @click="" class="list flex flex-justify-content-space-between">
-          <div class="list-left flex flex-direction-column flex-justify-content-center">
-            <h3>房间 小恐龙 游戏扣费：16</h3>
-            <p>2017/07/16</p>
-          </div>
-          <div class="list-right flex flex-justify-content-center flex-align-items-center">
-            <p>-16</p>
+            <p>{{item.bill}}</p>
           </div>
         </a>
 
@@ -142,7 +42,13 @@ import { mapGetters } from 'vuex';
   name: 'coin',
   data () {
     return {
-        recordList: [],
+        items: [
+          {
+            content: "房间 小恐龙 游戏扣费：16",
+            time: "2017/07/16",
+            bill: "-16"
+          },
+        ],
     }
   },
   methods: {

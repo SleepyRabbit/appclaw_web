@@ -14,159 +14,16 @@
 
     <div class="content overflow-y-auto">
       <div class="container ">
-        <a @click="" class="list flex">
+        <a @click="" class="list flex" v-for="item in items">
           <div class="list-left flex flex-justify-content-center flex-align-items-center">
             <img src="../../assets/img/cat.jpg" alt="">
           </div>
           <div class="list-center flex-grow-1 flex flex-direction-column flex-justify-content-center">
-            <h3>小恐龙</h3>
-            <p>2017/07/16</p>
+            <h3>{{item.content}}</h3>
+            <p>{{item.time}}</p>
           </div>
           <div class="list-right flex flex-justify-content-center flex-align-items-center">
-            <p>抓取成功</p>
-          </div>
-        </a>
-
-        <a @click="" class="list flex">
-          <div class="list-left flex flex-justify-content-center flex-align-items-center">
-            <img src="../../assets/img/cat.jpg" alt="">
-          </div>
-          <div class="list-center flex-grow-1 flex flex-direction-column flex-justify-content-center">
-            <h3>小恐龙</h3>
-            <p>2017/07/16</p>
-          </div>
-          <div class="list-right flex flex-justify-content-center flex-align-items-center">
-            <p>抓取成功</p>
-          </div>
-        </a>
-
-        <a @click="" class="list flex">
-          <div class="list-left flex flex-justify-content-center flex-align-items-center">
-            <img src="../../assets/img/cat.jpg" alt="">
-          </div>
-          <div class="list-center flex-grow-1 flex flex-direction-column flex-justify-content-center">
-            <h3>小恐龙</h3>
-            <p>2017/07/16</p>
-          </div>
-          <div class="list-right flex flex-justify-content-center flex-align-items-center">
-            <p>抓取成功</p>
-          </div>
-        </a>
-
-        <a @click="" class="list flex">
-          <div class="list-left flex flex-justify-content-center flex-align-items-center">
-            <img src="../../assets/img/cat.jpg" alt="">
-          </div>
-          <div class="list-center flex-grow-1 flex flex-direction-column flex-justify-content-center">
-            <h3>小恐龙</h3>
-            <p>2017/07/16</p>
-          </div>
-          <div class="list-right flex flex-justify-content-center flex-align-items-center">
-            <p>抓取成功</p>
-          </div>
-        </a>
-
-        <a @click="" class="list flex">
-          <div class="list-left flex flex-justify-content-center flex-align-items-center">
-            <img src="../../assets/img/cat.jpg" alt="">
-          </div>
-          <div class="list-center flex-grow-1 flex flex-direction-column flex-justify-content-center">
-            <h3>小恐龙</h3>
-            <p>2017/07/16</p>
-          </div>
-          <div class="list-right flex flex-justify-content-center flex-align-items-center">
-            <p>抓取成功</p>
-          </div>
-        </a>
-
-        <a @click="" class="list flex">
-          <div class="list-left flex flex-justify-content-center flex-align-items-center">
-            <img src="../../assets/img/cat.jpg" alt="">
-          </div>
-          <div class="list-center flex-grow-1 flex flex-direction-column flex-justify-content-center">
-            <h3>小恐龙</h3>
-            <p>2017/07/16</p>
-          </div>
-          <div class="list-right flex flex-justify-content-center flex-align-items-center">
-            <p>抓取成功</p>
-          </div>
-        </a>
-
-        <a @click="" class="list flex">
-          <div class="list-left flex flex-justify-content-center flex-align-items-center">
-            <img src="../../assets/img/cat.jpg" alt="">
-          </div>
-          <div class="list-center flex-grow-1 flex flex-direction-column flex-justify-content-center">
-            <h3>小恐龙</h3>
-            <p>2017/07/16</p>
-          </div>
-          <div class="list-right flex flex-justify-content-center flex-align-items-center">
-            <p>抓取成功</p>
-          </div>
-        </a>
-
-        <a @click="" class="list flex">
-          <div class="list-left flex flex-justify-content-center flex-align-items-center">
-            <img src="../../assets/img/cat.jpg" alt="">
-          </div>
-          <div class="list-center flex-grow-1 flex flex-direction-column flex-justify-content-center">
-            <h3>小恐龙</h3>
-            <p>2017/07/16</p>
-          </div>
-          <div class="list-right flex flex-justify-content-center flex-align-items-center">
-            <p>抓取成功</p>
-          </div>
-        </a>
-
-        <a @click="" class="list flex">
-          <div class="list-left flex flex-justify-content-center flex-align-items-center">
-            <img src="../../assets/img/cat.jpg" alt="">
-          </div>
-          <div class="list-center flex-grow-1 flex flex-direction-column flex-justify-content-center">
-            <h3>小恐龙</h3>
-            <p>2017/07/16</p>
-          </div>
-          <div class="list-right flex flex-justify-content-center flex-align-items-center">
-            <p>抓取成功</p>
-          </div>
-        </a>
-
-        <a @click="" class="list flex">
-          <div class="list-left flex flex-justify-content-center flex-align-items-center">
-            <img src="../../assets/img/cat.jpg" alt="">
-          </div>
-          <div class="list-center flex-grow-1 flex flex-direction-column flex-justify-content-center">
-            <h3>小恐龙</h3>
-            <p>2017/07/16</p>
-          </div>
-          <div class="list-right flex flex-justify-content-center flex-align-items-center">
-            <p>抓取成功</p>
-          </div>
-        </a>
-
-        <a @click="" class="list flex">
-          <div class="list-left flex flex-justify-content-center flex-align-items-center">
-            <img src="../../assets/img/cat.jpg" alt="">
-          </div>
-          <div class="list-center flex-grow-1 flex flex-direction-column flex-justify-content-center">
-            <h3>小恐龙</h3>
-            <p>2017/07/16</p>
-          </div>
-          <div class="list-right flex flex-justify-content-center flex-align-items-center">
-            <p>抓取成功</p>
-          </div>
-        </a>
-
-        <a @click="" class="list flex">
-          <div class="list-left flex flex-justify-content-center flex-align-items-center">
-            <img src="../../assets/img/cat.jpg" alt="">
-          </div>
-          <div class="list-center flex-grow-1 flex flex-direction-column flex-justify-content-center">
-            <h3>小恐龙</h3>
-            <p>2017/07/16</p>
-          </div>
-          <div class="list-right flex flex-justify-content-center flex-align-items-center">
-            <p>抓取成功</p>
+            <p>{{item.result}}</p>
           </div>
         </a>
       </div>
@@ -182,7 +39,14 @@ import { mapGetters } from 'vuex';
   name: 'record',
   data () {
     return {
-        recordList: [],
+        items: [
+          {
+              img: "",
+              content: "小恐龙",
+              time: "2017/07/16",
+              result: "抓取成功",
+          }
+        ],
     }
   },
   methods: {
