@@ -1,11 +1,11 @@
 <template>
-  <div class="add">
+  <div class="edit">
     <div class="head flex">
       <div class="head-left flex-shrink-0 flex flex-align-items-center">
         <a @click="onBack" class="flex flex-justify-content-center flex-align-items-center"><i class="icon-back"></i>返回</a>
       </div>
       <div class="head-title flex-grow-1 flex flex-justify-content-center flex-align-items-center">
-        <h3>编辑地址</h3>
+        <h3>添加地址</h3>
       </div>
       <div class="head-right flex-shrink-0 flex flex-justify-content-center flex-align-items-center">
       </div>
@@ -52,7 +52,7 @@
   import ChinaAddressV3Data from 'vux/src/datas/china_address_v3.json'
 
   export default {
-  name: 'add',
+  name: 'edit',
   components: {
     Group,
     XAddress,
@@ -60,20 +60,14 @@
   },
   data () {
     return {
-        value: [],
-        list: {
-          name: "",
-          tel: "",
-          addr: "",
-          street: "",
-          pos: ""
-        },
-        addressData: ChinaAddressV3Data,
+      list: {},
+      value: [],
+      addressData: ChinaAddressV3Data,
     }
   },
   methods: {
     onsel: function () {
-//      console.log(this.list.name);
+      console.log(this.list.name);
     },
     onBack: function () {
       this.$router.back(-1);
@@ -112,7 +106,12 @@
     }
   },
   created: function() {
+//    console.log(this.$router);
+//    console.log("created!");
 //    this.$nextTick(this.init, 100);
+    this.$nextTick(function () {
+      this.list = this.$route.params.list;
+    }, 100);
   }
 }
 </script>

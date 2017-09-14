@@ -13,15 +13,16 @@
 
     <div class="content overflow-y-auto">
       <div class="list-container" v-for="list in lists">
-        <a href="#">
+        <!--<router-link :to="{path: 'add', query: {id: 2}}">-->
+        <router-link :to="{name: 'my_address_edit', params: {list: list}}">
           <div class="list-name flex flex-justify-content-space-between flex-align-items-center">
             <p>{{ list.name }}</p>
             <p>{{ list.tel }}</p>
           </div>
-          <p>{{ list.addr }}</p>
+          <p>{{ list.addr }}{{ list.street }}{{ list.pos }}</p>
           <div class="list-footer">
           </div>
-        </a>
+        </router-link>
       </div>
     </div>
 
@@ -43,32 +44,23 @@ export default {
                 {
                   name: "侯恩星",
                   tel: "18501053820",
-                  addr: "北京市海淀区清河中街68号五彩城写字楼10F-155 100085"
+                  addr: "北京市海淀区",
+                  street: "清河中街68号五彩城写字楼10F-155 ",
+                  pos: "100085"
                 },
                 {
                   name: "侯恩星",
                   tel: "18501053820",
-                  addr: "北京市海淀区清河中街68号五彩城写字楼10F-155 100085"
+                  addr: "北京市海淀区",
+                  street: "清河中街68号五彩城写字楼10F-155 ",
+                  pos: "100085"
                 },
                 {
                   name: "侯恩星",
                   tel: "18501053820",
-                  addr: "北京市海淀区清河中街68号五彩城写字楼10F-155 100085"
-                },
-                {
-                  name: "侯恩星",
-                  tel: "18501053820",
-                  addr: "北京市海淀区清河中街68号五彩城写字楼10F-155 100085"
-                },
-                {
-                  name: "侯恩星",
-                  tel: "18501053820",
-                  addr: "北京市海淀区清河中街68号五彩城写字楼10F-155 100085"
-                },
-                {
-                  name: "侯恩星",
-                  tel: "18501053820",
-                  addr: "北京市海淀区清河中街68号五彩城写字楼10F-155 100085"
+                  addr: "北京市海淀区",
+                  street: "清河中街68号五彩城写字楼10F-155 ",
+                  pos: "100085"
                 },
         ],
     }

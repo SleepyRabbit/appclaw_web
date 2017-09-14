@@ -14,7 +14,7 @@
 
     <div class="content overflow-y-auto">
       <div class="container ">
-        <a @click="" class="list flex">
+        <a @click="" class="list flex" v-for="item in items">
           <div class="list-left flex flex-justify-content-center flex-align-items-center">
             <img src="../../assets/img/cat.jpg" alt="">
           </div>

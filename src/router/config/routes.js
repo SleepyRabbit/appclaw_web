@@ -19,6 +19,7 @@ import my_about_home from '@/components/my/about/home'
 import my_address from '@/components/my/address'
 import my_address_home from '@/components/my/address/home'
 import my_address_add from '@/components/my/address/add'
+import my_address_edit from '@/components/my/address/edit'
 
 export default [
     // {
@@ -82,6 +83,11 @@ export default [
               path: 'add',
               name: 'my_address_add',
               component: my_address_add
+            },
+            {
+              path: 'edit',
+              name: 'my_address_edit',
+              component: my_address_edit
             }
           ]
         },
@@ -100,8 +106,8 @@ export default [
         },
       ]
     },
-    {
-      path: '*',
-      redirect: {path: '/my/home'},
-    },
+    // {
+    //   path: '*',
+    //   redirect: {path: '/my/home'},
+    // },
 ]
