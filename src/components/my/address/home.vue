@@ -12,14 +12,13 @@
     </div>
 
     <div class="content overflow-y-auto">
-      <div class="list-container" v-for="list in lists">
-        <!--<router-link :to="{path: 'add', query: {id: 2}}">-->
-        <router-link :to="{name: 'my_address_edit', params: {list: list}}">
+      <div class="list-container" v-for="(list, index) in lists">
+        <router-link :to="{name: 'my_address_edit', params: {list: list, index: index}}">
           <div class="list-name flex flex-justify-content-space-between flex-align-items-center">
             <p>{{ list.name }}</p>
             <p>{{ list.tel }}</p>
           </div>
-          <p>{{ list.addr }}{{ list.street }}{{ list.pos }}</p>
+          <p>{{ list.addr }}{{ list.street }} {{ list.pos }}</p>
           <div class="list-footer">
           </div>
         </router-link>
@@ -45,21 +44,21 @@ export default {
                   name: "侯恩星",
                   tel: "18501053820",
                   addr: "北京市海淀区",
-                  street: "清河中街68号五彩城写字楼10F-155 ",
+                  street: "清河中街68号五彩城写字楼10F-155",
                   pos: "100085"
                 },
                 {
                   name: "侯恩星",
                   tel: "18501053820",
                   addr: "北京市海淀区",
-                  street: "清河中街68号五彩城写字楼10F-155 ",
+                  street: "清河中街68号五彩城写字楼10F-155",
                   pos: "100085"
                 },
                 {
                   name: "侯恩星",
                   tel: "18501053820",
                   addr: "北京市海淀区",
-                  street: "清河中街68号五彩城写字楼10F-155 ",
+                  street: "清河中街68号五彩城写字楼10F-155",
                   pos: "100085"
                 },
         ],
@@ -73,7 +72,15 @@ export default {
       this.$router.replace('/my/my_address/add_address');
 //      this.$router.replace('/address');
     },
+    dataInit: function () {
+      let index = this.$route.params.index;
+//        console.log(index);
+      if(typeof(index) !== "undefined") {
+        this.lists.splice(index, 1,this.$route.params.list);
+      }
+    },
     init: function() {
+      this.dataInit();
       /* 获取jwt */
       let jwt = this.getJwt;
 //      console.log(jwt);
@@ -112,6 +119,7 @@ export default {
   created: function() {
 //    console.log("created!");
 //    this.$nextTick(this.init, 100);
+    this.$nextTick(this.dataInit, 100);
   }
 }
 </script>

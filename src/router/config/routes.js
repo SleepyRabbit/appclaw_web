@@ -106,8 +106,8 @@ export default [
         },
       ]
     },
-    // {
-    //   path: '*',
-    //   redirect: {path: '/my/home'},
-    // },
+    {
+      path: '*',
+      redirect: {path: '/my/home'},
+    },
 ]

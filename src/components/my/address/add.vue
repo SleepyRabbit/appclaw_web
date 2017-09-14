@@ -39,8 +39,8 @@
     </div>
 
     <div class="footer flex flex-justify-content-center flex-align-items-center">
-      <!--<router-link to="home" class="flex flex-justify-content-center flex-align-items-center">保存</router-link>-->
-      <button @click="onsel" class="flex flex-justify-content-center flex-align-items-center">保存</button>
+      <router-link to="home" class="flex flex-justify-content-center flex-align-items-center">保存</router-link>
+      <!--<button @click="onsel" class="flex flex-justify-content-center flex-align-items-center">保存</button>-->
     </div>
 
   </div>

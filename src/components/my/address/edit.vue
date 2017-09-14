@@ -5,7 +5,7 @@
         <a @click="onBack" class="flex flex-justify-content-center flex-align-items-center"><i class="icon-back"></i>返回</a>
       </div>
       <div class="head-title flex-grow-1 flex flex-justify-content-center flex-align-items-center">
-        <h3>添加地址</h3>
+        <h3>编辑地址</h3>
       </div>
       <div class="head-right flex-shrink-0 flex flex-justify-content-center flex-align-items-center">
       </div>
@@ -39,8 +39,7 @@
     </div>
 
     <div class="footer flex flex-justify-content-center flex-align-items-center">
-      <!--<router-link to="home" class="flex flex-justify-content-center flex-align-items-center">保存</router-link>-->
-      <button @click="onsel" class="flex flex-justify-content-center flex-align-items-center">保存</button>
+      <router-link :to="{name: 'my_address_home', params: {list: list, index: index}}" class="flex flex-justify-content-center flex-align-items-center">保存</router-link>
     </div>
 
   </div>
@@ -61,6 +60,7 @@
   data () {
     return {
       list: {},
+      index: null,
       value: [],
       addressData: ChinaAddressV3Data,
     }
@@ -111,6 +111,8 @@
 //    this.$nextTick(this.init, 100);
     this.$nextTick(function () {
       this.list = this.$route.params.list;
+      this.index = this.$route.params.index;
+      console.log(this.index);
     }, 100);
   }
 }
