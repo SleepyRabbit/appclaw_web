@@ -19,7 +19,7 @@
             <img src="../../assets/img/cat.jpg" alt="">
           </div>
           <div class="list-center flex-grow-1 flex flex-direction-column flex-justify-content-center">
-            <h3>{{item.content}}</h3>
+            <h3>{{item.title}}</h3>
             <p>{{item.time}}</p>
           </div>
           <div class="list-right flex flex-justify-content-center flex-align-items-center">
@@ -41,8 +41,8 @@ import { mapGetters } from 'vuex';
     return {
       items: [
         {
-          img: "",
-          content: "小恐龙",
+          image: "",
+          title: "小恐龙",
           time: "2017/07/16",
           result: "抓取成功",
         }
@@ -71,7 +71,7 @@ import { mapGetters } from 'vuex';
       //console.log(this.jwt);
       this.$http({
         method: 'GET',
-        url: "https://ucast.cc/api/v1/games",
+        url: "https://ucast.cc/api/v1/appclaw/my-rounds?win=true",
         headers: {
           Authorization: "bearer " + this.jwt
         }

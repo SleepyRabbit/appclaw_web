@@ -21,11 +21,11 @@
       <div class="container overflow-y-scroll">
         <a @click="" class="list flex flex-justify-content-space-between" v-for="item in items">
           <div class="list-left flex flex-direction-column flex-justify-content-center">
-            <h3>{{item.content}}</h3>
+            <h3>{{item.comment}}</h3>
             <p>{{item.time}}</p>
           </div>
           <div class="list-right flex flex-justify-content-center flex-align-items-center">
-            <p>{{item.bill}}</p>
+            <p>{{item.fee}}</p>
           </div>
         </a>
 
@@ -44,9 +44,9 @@ import { mapGetters } from 'vuex';
     return {
         items: [
           {
-            content: "房间 小恐龙 游戏扣费：16",
+            comment: "参与：房间 小恐龙",
             time: "2017/07/16",
-            bill: "-16"
+            fee: "-16"
           },
         ],
     }
@@ -58,7 +58,6 @@ import { mapGetters } from 'vuex';
     init: function() {
       /* 获取jwt */
       let jwt = this.getJwt;
-//      console.log(jwt);
 
       if(jwt.length === 0) {
         alert("jwt为空");
@@ -70,15 +69,14 @@ import { mapGetters } from 'vuex';
 //        alert("该页面不能直接在浏览器打开哦~");
 //        return;
 //      }
-      //console.log(this.jwt);
+
       this.$http({
         method: 'GET',
-        url: "https://ucast.cc/api/v1/games",
+        url: "https://ucast.cc/api/v1/appclaw/my-coins",
         headers: {
           Authorization: "bearer " + this.jwt
         }
       }).then(res => {
-//          console.log(res);
           this.recordList = res.body;
         },
         res => {
