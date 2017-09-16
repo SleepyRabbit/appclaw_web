@@ -39,14 +39,14 @@
           </router-link>
 
           <router-link to="record" class="list flex flex-align-items-center flex-justify-content-space-between">
-            <span class="list-left flex flex-align-items-center"><i class="icon-record"></i>抓取记录</span>
+            <span class="list-left flex flex-align-items-center"><i class="icon-record"></i>游戏记录</span>
             <div class="list-right flex flex-align-items-center">
               <i class="icon icon-more"></i>
             </div>
           </router-link>
 
           <router-link to="doll" class="list flex flex-align-items-center flex-justify-content-space-between">
-            <span class="list-left flex flex-align-items-center"><i class="icon-panda"></i>我的娃娃</span>
+            <span class="list-left flex flex-align-items-center"><i class="icon-panda"></i>抓取娃娃</span>
             <div class="list-right flex flex-align-items-center">
               <i class="icon icon-more"></i>
             </div>

@@ -16,7 +16,7 @@
       <div class="container ">
         <a @click="" class="list flex" v-for="item in items">
           <div class="list-left flex flex-justify-content-center flex-align-items-center">
-            <img src="../../assets/img/cat.jpg" alt="">
+            <img v-bind:src="item.image" alt="">
           </div>
           <div class="list-center flex-grow-1 flex flex-direction-column flex-justify-content-center">
             <h3>{{item.title}}</h3>
@@ -39,14 +39,7 @@ import { mapGetters } from 'vuex';
   name: 'doll',
   data () {
     return {
-      items: [
-        {
-          image: "",
-          title: "小恐龙",
-          time: "2017/07/16",
-          result: "抓取成功",
-        }
-      ],
+      items: [],
     }
   },
   methods: {
@@ -54,30 +47,21 @@ import { mapGetters } from 'vuex';
       this.$router.back(-1);
     },
     init: function() {
-      /* 获取jwt */
       let jwt = this.getJwt;
-//      console.log(jwt);
 
       if(jwt.length === 0) {
-        alert("jwt为空");
+        alert("令牌错误");
         return;
       }
 
-//      this.jwt = this.getJwt('jwt') || "";
-//      if (!this.jwt) {
-//        alert("该页面不能直接在浏览器打开哦~");
-//        return;
-//      }
-      //console.log(this.jwt);
       this.$http({
         method: 'GET',
         url: "https://ucast.cc/api/v1/appclaw/my-rounds?win=true",
         headers: {
-          Authorization: "bearer " + this.jwt
+          Authorization: "bearer " + jwt
         }
       }).then(res => {
-//          console.log(res);
-          this.recordList = res.body;
+          this.items = res.body;
         },
         res => {
           alert("账户有问题哦，截图发给技术蝈蝈领金币哦~");
@@ -90,9 +74,7 @@ import { mapGetters } from 'vuex';
     ])
   },
   created: function() {
-      console.log(this.$router);
-//    console.log("created!");
-//    this.$nextTick(this.init, 100);
+    this.$nextTick(this.init, 100);
   }
 }
 </script>

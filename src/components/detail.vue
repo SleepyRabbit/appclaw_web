@@ -47,16 +47,11 @@ export default {
         return;
       }
 
-//      if (!this.jwt) {
-//        alert("该页面不能直接在浏览器打开哦~");
-//        return;
-//      }
-      //console.log(this.jwt);
       this.$http({
         method: 'GET',
         url: "https://ucast.cc/api/v1/appclaw/games/10003",
         headers: {
-          Authorization: "bearer " + this.jwt
+          Authorization: "bearer " + jwt
         }
       }).then(res => {
 //          console.log(res);

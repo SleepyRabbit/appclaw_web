@@ -39,7 +39,7 @@ import { mapGetters } from 'vuex';
   name: 'record',
   data () {
     return {
-        items: JSON.parse(`[{"image":"http://img2.nuandaoimg.com/Public/images/uploads/product/20130603/51ac6e6e783d7-450.jpg","title":"抓抓抓","time":"2017/09/15 17:38:44","result":"抓取失败"},{"image":"http://img2.nuandaoimg.com/Public/images/uploads/product/20130603/51ac6e6e783d7-450.jpg","title":"抓抓抓","time":"2017/09/15 17:26:04","result":"抓取失败"},{"image":"http://img2.nuandaoimg.com/Public/images/uploads/product/20130603/51ac6e6e783d7-450.jpg","title":"抓抓抓","time":"2017/09/14 02:10:40","result":"抓取失败"},{"image":"http://img2.nuandaoimg.com/Public/images/uploads/product/20130603/51ac6e6e783d7-450.jpg","title":"抓抓抓","time":"2017/09/13 22:04:24","result":"抓取失败"},{"image":"http://img2.nuandaoimg.com/Public/images/uploads/product/20130603/51ac6e6e783d7-450.jpg","title":"抓抓抓","time":"2017/09/12 23:21:42","result":"抓取失败"},{"image":"http://img2.nuandaoimg.com/Public/images/uploads/product/20130603/51ac6e6e783d7-450.jpg","title":"抓抓抓","time":"2017/09/12 23:21:16","result":"抓取失败"},{"image":"http://img2.nuandaoimg.com/Public/images/uploads/product/20130603/51ac6e6e783d7-450.jpg","title":"抓抓抓","time":"2017/09/12 23:19:32","result":"抓取失败"},{"image":"http://img2.nuandaoimg.com/Public/images/uploads/product/20130603/51ac6e6e783d7-450.jpg","title":"抓抓抓","time":"2017/09/12 23:17:04","result":"抓取失败"},{"image":"http://img2.nuandaoimg.com/Public/images/uploads/product/20130603/51ac6e6e783d7-450.jpg","title":"抓抓抓","time":"2017/09/12 17:53:39","result":"抓取失败"},{"image":"http://img2.nuandaoimg.com/Public/images/uploads/product/20130603/51ac6e6e783d7-450.jpg","title":"抓抓抓","time":"2017/09/12 17:52:51","result":"抓取失败"},{"image":"http://img2.nuandaoimg.com/Public/images/uploads/product/20130603/51ac6e6e783d7-450.jpg","title":"抓抓抓","time":"2017/09/12 17:52:04","result":"抓取失败"},{"image":"http://img2.nuandaoimg.com/Public/images/uploads/product/20130603/51ac6e6e783d7-450.jpg","title":"抓抓抓","time":"2017/09/12 17:51:36","result":"抓取失败"},{"image":"http://img2.nuandaoimg.com/Public/images/uploads/product/20130603/51ac6e6e783d7-450.jpg","title":"抓抓抓","time":"2017/09/12 17:49:51","result":"抓取失败"},{"image":"http://img2.nuandaoimg.com/Public/images/uploads/product/20130603/51ac6e6e783d7-450.jpg","title":"抓抓抓","time":"2017/09/12 17:32:05","result":"抓取失败"},{"image":"http://img2.nuandaoimg.com/Public/images/uploads/product/20130603/51ac6e6e783d7-450.jpg","title":"抓抓抓","time":"2017/09/12 15:43:29","result":"抓取失败"},{"image":"http://img2.nuandaoimg.com/Public/images/uploads/product/20130603/51ac6e6e783d7-450.jpg","title":"抓抓抓","time":"2017/09/12 14:46:03","result":"抓取失败"},{"image":"http://img2.nuandaoimg.com/Public/images/uploads/product/20130603/51ac6e6e783d7-450.jpg","title":"抓抓抓","time":"2017/09/12 14:45:14","result":"抓取失败"},{"image":"http://img2.nuandaoimg.com/Public/images/uploads/product/20130603/51ac6e6e783d7-450.jpg","title":"抓抓抓","time":"2017/09/12 14:44:24","result":"抓取失败"},{"image":"http://img2.nuandaoimg.com/Public/images/uploads/product/20130603/51ac6e6e783d7-450.jpg","title":"抓抓抓","time":"2017/09/12 14:43:36","result":"抓取失败"},{"image":"http://img2.nuandaoimg.com/Public/images/uploads/product/20130603/51ac6e6e783d7-450.jpg","title":"抓抓抓","time":"2017/09/12 14:42:42","result":"抓取失败"},{"image":"http://img2.nuandaoimg.com/Public/images/uploads/product/20130603/51ac6e6e783d7-450.jpg","title":"抓抓抓","time":"2017/09/12 14:41:27","result":"抓取失败"},{"image":"http://img2.nuandaoimg.com/Public/images/uploads/product/20130603/51ac6e6e783d7-450.jpg","title":"抓抓抓","time":"2017/09/12 14:36:52","result":"抓取失败"},{"image":"http://img2.nuandaoimg.com/Public/images/uploads/product/20130603/51ac6e6e783d7-450.jpg","title":"抓抓抓","time":"2017/09/12 14:35:54","result":"抓取失败"},{"image":"http://img2.nuandaoimg.com/Public/images/uploads/product/20130603/51ac6e6e783d7-450.jpg","title":"抓抓抓","time":"2017/09/12 14:35:04","result":"抓取失败"},{"image":"http://img2.nuandaoimg.com/Public/images/uploads/product/20130603/51ac6e6e783d7-450.jpg","title":"抓抓抓","time":"2017/09/12 14:34:15","result":"抓取失败"},{"image":"http://img2.nuandaoimg.com/Public/images/uploads/product/20130603/51ac6e6e783d7-450.jpg","title":"抓抓抓","time":"2017/09/12 14:33:17","result":"抓取失败"},{"image":"http://img2.nuandaoimg.com/Public/images/uploads/product/20130603/51ac6e6e783d7-450.jpg","title":"抓抓抓","time":"2017/09/12 14:32:18","result":"抓取失败"},{"image":"http://img2.nuandaoimg.com/Public/images/uploads/product/20130603/51ac6e6e783d7-450.jpg","title":"抓抓抓","time":"2017/09/12 14:31:16","result":"抓取失败"},{"image":"http://img2.nuandaoimg.com/Public/images/uploads/product/20130603/51ac6e6e783d7-450.jpg","title":"抓抓抓","time":"2017/09/12 14:30:27","result":"抓取失败"},{"image":"http://img2.nuandaoimg.com/Public/images/uploads/product/20130603/51ac6e6e783d7-450.jpg","title":"抓抓抓","time":"2017/09/12 14:23:03","result":"抓取失败"},{"image":"http://img2.nuandaoimg.com/Public/images/uploads/product/20130603/51ac6e6e783d7-450.jpg","title":"抓抓抓","time":"2017/09/12 14:22:16","result":"抓取失败"},{"image":"http://img2.nuandaoimg.com/Public/images/uploads/product/20130603/51ac6e6e783d7-450.jpg","title":"抓抓抓","time":"2017/09/12 14:21:24","result":"抓取失败"},{"image":"http://img2.nuandaoimg.com/Public/images/uploads/product/20130603/51ac6e6e783d7-450.jpg","title":"抓抓抓","time":"2017/09/12 14:16:13","result":"抓取失败"},{"image":"http://img2.nuandaoimg.com/Public/images/uploads/product/20130603/51ac6e6e783d7-450.jpg","title":"抓抓抓","time":"2017/09/12 14:15:25","result":"抓取失败"},{"image":"http://img2.nuandaoimg.com/Public/images/uploads/product/20130603/51ac6e6e783d7-450.jpg","title":"抓抓抓","time":"2017/09/12 14:14:37","result":"抓取失败"},{"image":"http://img2.nuandaoimg.com/Public/images/uploads/product/20130603/51ac6e6e783d7-450.jpg","title":"抓抓抓","time":"2017/09/12 14:13:50","result":"抓取失败"},{"image":"http://img2.nuandaoimg.com/Public/images/uploads/product/20130603/51ac6e6e783d7-450.jpg","title":"抓抓抓","time":"2017/09/12 14:13:02","result":"抓取失败"},{"image":"http://img2.nuandaoimg.com/Public/images/uploads/product/20130603/51ac6e6e783d7-450.jpg","title":"抓抓抓","time":"2017/09/12 14:12:13","result":"抓取失败"},{"image":"http://img2.nuandaoimg.com/Public/images/uploads/product/20130603/51ac6e6e783d7-450.jpg","title":"抓抓抓","time":"2017/09/12 14:11:25","result":"抓取失败"},{"image":"http://img2.nuandaoimg.com/Public/images/uploads/product/20130603/51ac6e6e783d7-450.jpg","title":"抓抓抓","time":"2017/09/12 14:10:33","result":"抓取失败"},{"image":"http://img2.nuandaoimg.com/Public/images/uploads/product/20130603/51ac6e6e783d7-450.jpg","title":"抓抓抓","time":"2017/09/12 06:23:05","result":"抓取失败"},{"image":"http://img2.nuandaoimg.com/Public/images/uploads/product/20130603/51ac6e6e783d7-450.jpg","title":"抓抓抓","time":"2017/09/12 06:21:07","result":"抓取失败"},{"image":"http://img2.nuandaoimg.com/Public/images/uploads/product/20130603/51ac6e6e783d7-450.jpg","title":"抓抓抓","time":"2017/09/12 06:19:36","result":"抓取失败"},{"image":"http://img2.nuandaoimg.com/Public/images/uploads/product/20130603/51ac6e6e783d7-450.jpg","title":"抓抓抓","time":"2017/09/12 06:17:02","result":"抓取失败"},{"image":"http://img2.nuandaoimg.com/Public/images/uploads/product/20130603/51ac6e6e783d7-450.jpg","title":"抓抓抓","time":"2017/09/12 06:16:15","result":"抓取失败"},{"image":"http://img2.nuandaoimg.com/Public/images/uploads/product/20130603/51ac6e6e783d7-450.jpg","title":"抓抓抓","time":"2017/09/12 05:02:59","result":"抓取失败"},{"image":"http://img2.nuandaoimg.com/Public/images/uploads/product/20130603/51ac6e6e783d7-450.jpg","title":"抓抓抓","time":"2017/09/12 02:23:40","result":"抓取失败"},{"image":"http://img2.nuandaoimg.com/Public/images/uploads/product/20130603/51ac6e6e783d7-450.jpg","title":"抓抓抓","time":"2017/09/12 02:19:42","result":"抓取失败"},{"image":"http://img2.nuandaoimg.com/Public/images/uploads/product/20130603/51ac6e6e783d7-450.jpg","title":"抓抓抓","time":"2017/09/11 22:49:00","result":"抓取失败"},{"image":"http://img2.nuandaoimg.com/Public/images/uploads/product/20130603/51ac6e6e783d7-450.jpg","title":"抓抓抓","time":"2017/09/11 22:47:23","result":"抓取失败"},{"image":"http://img2.nuandaoimg.com/Public/images/uploads/product/20130603/51ac6e6e783d7-450.jpg","title":"抓抓抓","time":"2017/09/11 22:44:32","result":"抓取失败"},{"image":"http://img2.nuandaoimg.com/Public/images/uploads/product/20130603/51ac6e6e783d7-450.jpg","title":"抓抓抓","time":"2017/09/11 22:41:11","result":"抓取失败"},{"image":"http://img2.nuandaoimg.com/Public/images/uploads/product/20130603/51ac6e6e783d7-450.jpg","title":"抓抓抓","time":"2017/09/11 22:21:54","result":"抓取失败"},{"image":"http://img2.nuandaoimg.com/Public/images/uploads/product/20130603/51ac6e6e783d7-450.jpg","title":"抓抓抓","time":"2017/09/11 05:27:05","result":"抓取失败"},{"image":"http://img2.nuandaoimg.com/Public/images/uploads/product/20130603/51ac6e6e783d7-450.jpg","title":"抓抓抓","time":"2017/09/11 05:10:03","result":"抓取失败"}]`),
+        items:[],
     }
   },
   methods: {
@@ -47,30 +47,21 @@ import { mapGetters } from 'vuex';
       this.$router.back(-1);
     },
     init: function() {
-      /* 获取jwt */
       let jwt = this.getJwt;
-//      console.log(jwt);
 
       if(jwt.length === 0) {
-        alert("jwt为空");
+        alert("令牌错误");
         return;
       }
 
-//      this.jwt = this.getJwt('jwt') || "";
-//      if (!this.jwt) {
-//        alert("该页面不能直接在浏览器打开哦~");
-//        return;
-//      }
-      //console.log(this.jwt);
       this.$http({
         method: 'GET',
         url: "https://ucast.cc/api/v1/appclaw/my-rounds",
         headers: {
-          Authorization: "bearer " + this.jwt
+          Authorization: "bearer " + jwt
         }
       }).then(res => {
-//          console.log(res);
-          this.recordList = res.body;
+          this.items = res.body;
         },
         res => {
           alert("账户有问题哦，截图发给技术蝈蝈领金币哦~");
@@ -84,7 +75,7 @@ import { mapGetters } from 'vuex';
   },
   created: function() {
 //    console.log("created!");
-//    this.$nextTick(this.init, 100);
+    this.$nextTick(this.init, 100);
   }
 }
 </script>
