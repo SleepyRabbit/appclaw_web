@@ -49,11 +49,8 @@ import { mapGetters } from 'vuex';
     },
 
     init: function() {
-      // 获取jwt
       let jwt = this.getJwt;
-      console.log("JWT:"+jwt);
-
-      if(jwt.length === 0) {
+      if(!jwt) {
         alert("令牌错误");
         return;
       }
@@ -70,7 +67,7 @@ import { mapGetters } from 'vuex';
           this.balance = res.body.balance;
         },
         res => {
-          alert("账户有问题哦，截图发给技术蝈蝈领金币哦~");
+          alert("账户有问题哦~");
         });
     }
   },

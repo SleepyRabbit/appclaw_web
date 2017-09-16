@@ -70,10 +70,7 @@ export default {
         alert("jwt为空");
         return;
       }
-//      if (jwt) {
-//        alert("该页面不能直接在浏览器打开哦~");
-//        return;
-//      }
+
       this.$http({
         method: 'GET',
         url: "https://ucast.cc/api/v1/appclaw/scenes",
@@ -81,7 +78,6 @@ export default {
           Authorization: "bearer " + jwt
         }
       }).then(res => {
-//          console.log(res);
           this.glbList = res.body;
         },
         res => {

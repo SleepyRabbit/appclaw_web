@@ -15,9 +15,8 @@
     <div class="content">
       <div class="content-banner flex flex-justify-content-center">
         <div class="banner-content flex flex-direction-column flex-align-items-center">
-          <img src="../../assets/img/user1.jpg" alt="">
-          <h4>哆啦a梦</h4>
-          <h5>共抓中0次</h5>
+          <img  v-bind:src="mine.avatar"  alt="">
+          <h4>{{mine.nickname}}</h4>
         </div>
       </div>
 
@@ -91,6 +90,7 @@
     name: 'home',
     data () {
       return {
+        mine:{}
       }
     },
     methods: {
@@ -101,7 +101,27 @@
         console.log(this.value);
       },
       init: function () {
-        console.log('init');
+
+        let jwt = this.getJwt;
+        if(!jwt) {
+          alert("令牌错误");
+          return;
+        }
+
+        this.$http({
+          method: 'GET',
+          url: "https://ucast.cc/api/v1/me",
+          headers: {
+            Authorization: "bearer " + jwt
+          }
+        }).then(res => {
+            //console.log(res.body);
+            this.mine = res.body;
+          },
+          res => {
+            alert("账户有问题哦~");
+          });
+
       }
     },
     computed: {
@@ -110,8 +130,7 @@
       ])
     },
     created: function() {
-//      console.log("created!");
-//      this.$nextTick(this.init, 100);
+      this.$nextTick(this.init, 100);
     }
   }
 </script>
