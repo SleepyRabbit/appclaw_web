@@ -21,7 +21,13 @@ router.beforeEach((from, to, next) => {
   if(typeof(from.query.jwt) != "undefined" ) {
     // console.log("query!");
     store.dispatch('setJwt', from.query.jwt);     //把jwt放到vuex store中进行存储
+//    localStorage.token = from.query.jwt;
   }
+/*
+else if(localStorage.token){
+  store.dispatch('setJwt', localStorage.token);   //或者 localstorage中包含token
+}
+*/
   next();
 })
 

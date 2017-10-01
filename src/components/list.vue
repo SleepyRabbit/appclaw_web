@@ -2,7 +2,7 @@
   <div class="list box flex flex-direction-column">
 
     <div class="head flex-shrink-0">
-
+    <a @click="onCapture()">拍个照~ 嘻嘻 {{qrCode}}</a>
     </div>
 
     <div class="content flex-grow-1 flex flex-direction-column overflow-y-scroll">
@@ -22,8 +22,8 @@
               <h5 class="flex-grow-1" :class="{'none': item.scene.state != 'busy'}">
                 游戏中
               </h5>
-              <h5 class="flex-grow-1" :class="{'none': item.scene.state != 'sleep'}">
-                待机中
+              <h5 class="flex-grow-1" :class="{'none': item.scene.state != 'down'}">
+                维护中
               </h5>
             </div>
 
@@ -46,11 +46,30 @@ export default {
   data () {
     return {
       glbList: [],
+      qrCode: ""
     }
   },
   methods: {
+    onCapture: function() {
+
+      //安排好native回调回来的入口
+      window.onQRCodeScanRet = (ret)=>{
+        delete window.onQRCodeScanRet;
+        this.qrCode = ret;
+      }
+
+      //调用扫码
+      window.WebViewJavascriptBridge.callHandler(
+        'onScanQrcode',
+        0,
+        (ret) => {console.log(ret);}
+      );
+    },
+
+
     onSelect: function(index) {
-      //console.log(item);
+      if(this.glbList[index].scene.state == "down")
+        return;
 
       //这里是关键代码，将选取的游戏信息提交给native
       window.WebViewJavascriptBridge.callHandler(
