@@ -6,7 +6,7 @@
         <a @click="onBack" class="flex flex-justify-content-center flex-align-items-center"><i class="icon-back"></i>返回</a>
       </div>
       <div class="head-title flex-grow-1 flex flex-justify-content-center flex-align-items-center">
-        <h3>抓取记录</h3>
+        <h3>游戏记录</h3>
       </div>
       <div class="head-right flex-shrink-0 flex flex-justify-content-center flex-align-items-center">
       </div>
@@ -76,6 +76,8 @@ import { mapGetters } from 'vuex';
   created: function() {
 //    console.log("created!");
     this.$nextTick(this.init, 100);
+    document.title = '游戏记录';
+
   }
 }
 </script>

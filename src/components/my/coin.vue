@@ -79,6 +79,8 @@ import { mapGetters } from 'vuex';
   created: function() {
     //console.log("created!");
     this.$nextTick(this.init, 100);
+    document.title = '我的金币';
+
   }
 }
 </script>

@@ -131,6 +131,7 @@
     },
     created: function() {
       this.$nextTick(this.init, 100);
+      document.title = '我的';
     }
   }
 </script>

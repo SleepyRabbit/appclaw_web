@@ -8,6 +8,12 @@
 
   export default {
     name: 'about',
+	created: function() {
+//    console.log("created!");
+//    this.$nextTick(this.init, 100);
+    document.title = '关于我们';
+
+  }
   }
 </script>
 
