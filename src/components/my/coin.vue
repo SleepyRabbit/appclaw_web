@@ -1,17 +1,5 @@
 <template>
-  <div class="coin">
-
-    <div class="head flex">
-      <div class="head-left flex-shrink-0 flex flex-align-items-center">
-        <a @click="onBack" class="flex flex-justify-content-center flex-align-items-center"><i class="icon-back"></i>返回</a>
-      </div>
-      <div class="head-title flex-grow-1 flex flex-justify-content-center flex-align-items-center">
-        <h3>我的金币</h3>
-      </div>
-      <div class="head-right flex-shrink-0 flex flex-justify-content-center flex-align-items-center">
-        <router-link to="recharge">充值</router-link>
-      </div>
-    </div>
+  <div class="coin box">
 
     <div class="content">
       <div class="content-banner flex flex-justify-content-center flex-align-items-center">
@@ -44,10 +32,6 @@ import { mapGetters } from 'vuex';
     return {bills:[], balance:{}};
   },
   methods: {
-    onBack: function () {
-      this.$router.back(-1);
-    },
-
     init: function() {
       let jwt = this.getJwt;
       if(!jwt) {
@@ -87,35 +71,11 @@ import { mapGetters } from 'vuex';
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-  .head {
-    position: fixed;
-    top: 0;
-    z-index: 9999;
-    width: 100%;
-    height: 50px;
-    background-color: rgb(245,245,245);
-    border-bottom: 1px solid rgb(235,235,235);
-  }
-
-  .head-left, .head-right {
-    width: 60px;
-  }
-
-  .head a {
-    text-decoration: none;
-    color: black;
-    font-size: 16px;
-  }
-
-  .head i {
-    font-size: 16px;
-  }
-
   .content {
-    position: absolute;
-    top: 50px;
+    /*position: absolute;*/
+    /*top: 50px;*/
     width: 100%;
-    /*height: calc(100vh - 50px);*/
+    height: 100%;
     background-color: rgb(255,234,10);
   }
 
@@ -131,7 +91,7 @@ import { mapGetters } from 'vuex';
   }
 
   .container {
-    height: calc(100vh - 200px);
+    height: calc(100vh - 150px);
     background-color: white;
     border: 0;
     border-radius: 4px;
