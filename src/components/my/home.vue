@@ -1,16 +1,5 @@
 <template>
-  <div class="home">
-
-    <div class="head flex">
-      <div class="head-left flex-shrink-0 flex flex-align-items-center">
-        <a @click="onBack" class="flex flex-justify-content-center flex-align-items-center"><i class="icon-back"></i>返回</a>
-      </div>
-      <div class="head-title flex-grow-1 flex flex-justify-content-center flex-align-items-center">
-        <h3>我的</h3>
-      </div>
-      <div class="head-right flex-shrink-0 flex flex-justify-content-center flex-align-items-center">
-      </div>
-    </div>
+  <div class="home box">
 
     <div class="content">
       <div class="content-banner flex flex-justify-content-center">
@@ -94,9 +83,6 @@
       }
     },
     methods: {
-      onBack: function () {
-        this.$router.back(-1);
-      },
       onSelect: function () {
         console.log(this.value);
       },
@@ -137,35 +123,11 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-  .head {
-    position: fixed;
-    top: 0;
-    z-index: 9999;
-    width: 100%;
-    height: 50px;
-    background-color: rgb(245,245,245);
-    border-bottom: 1px solid rgb(235,235,235);
-  }
-
-  .head-left, .head-right {
-    width: 60px;
-  }
-
-  .head a {
-    text-decoration: none;
-    color: black;
-    font-size: 16px;
-  }
-
-  .head i {
-    font-size: 16px;
-  }
-
   .content {
-    position: absolute;
-    top: 50px;
+    /*position: absolute;*/
+    /*top: 50px;*/
     width: 100%;
-    height: calc(100vh - 50px);
+    height: 100%;
   }
 
   .content-banner {
@@ -195,7 +157,7 @@
   }
 
   .user-list {
-    height: calc(100vh - 240px);
+    height: calc(100vh - 190px);
     background-color: rgb(235,235,235);
     /*padding: 5px 0;*/
   }

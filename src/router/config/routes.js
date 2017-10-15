@@ -5,6 +5,7 @@
 
 import list from '@/components/list'
 import detail from '@/components/detail'
+import scan from '@/components/scan'
 
 import my from '@/components/my'
 import my_home from '@/components/my/home'
@@ -36,6 +37,11 @@ export default [
       path: '/detail',
       name: 'detail',
       component: detail
+    },
+    {
+      path: '/scan',
+      name: 'scan',
+      component: scan
     },
     {
       path: '/my',
@@ -108,6 +114,6 @@ export default [
     },
     {
       path: '*',
-      redirect: {path: '/my/home'},
+      redirect: {path: '/scan'},
     },
 ]
