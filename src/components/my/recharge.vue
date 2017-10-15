@@ -2,14 +2,14 @@
   <div class="recharge">
     <div class="content">
       <div class="content-banner flex flex-justify-content-center flex-align-items-center">
-        <h1>20</h1>
+        <h1>{{items[sel].comment}}</h1>
       </div>
 
       <div class="container">
         <a @click="onSelect(index)" v-for="(item, index) in items">
           <div :class="index === sel ? 'sel':'nosel'" class="list flex flex-justify-content-space-between flex-align-items-center">
-            <div class="list-left">{{item.coin}}</div>
-            <div class="list-right">{{item.charge}}</div>
+            <div class="list-left">{{item.coins}}币</div>
+            <div class="list-right">{{item.charge}}元</div>
           </div>
         </a>
       </div>
@@ -28,20 +28,27 @@ import { mapGetters } from 'vuex';
   name: 'recharge',
   data () {
     return {
-        sel: 100,
-        fee: 0,
+        sel: 0,
         items: [
           {
-              coin: 50,
-              charge: "5元",
+            comment: "小试牛刀",
+            coins: 50,
+            charge: 5
           },
           {
-            coin: 120,
-            charge: "10元",
+            comment: "赠送20，小玩怡情",
+            coins: 120,
+            charge: 10
           },
           {
-            coin: 250,
-            charge: "20元",
+            comment: "赠送60，绝不沉迷",
+            coins: 260,
+            charge: 20
+          },
+          {
+            comment: "赠送200，畅玩无忌",
+            coins: 700,
+            charge: 50
           }
         ],
     }
@@ -49,53 +56,40 @@ import { mapGetters } from 'vuex';
   methods: {
     onSelect: function (index) {
       this.sel = index;
-      switch(index) {
-        case 0:
-            this.fee = 5;
-            break;
-        case 1:
-            this.fee = 10;
-            break;
-        case 2:
-            this.fee = 20;
-            break;
-        default:
-            break;
-      }
     },
     onCharge: function () {
-      let path = "https://ucast.cc/portal/appclaw/pay.html?fee=" + this.fee;
-      console.log(path);
-    },
-    init: function() {
-      /* 获取jwt */
+      let fee = this.items[this.sel].charge;
+      let path = "https://ucast.cc/api/v1/apay/pay?v=" + fee;
       let jwt = this.getJwt;
-//      console.log(jwt);
-
-      if(jwt.length === 0) {
-        alert("jwt为空");
+      if(!jwt) {
+        alert("账户错误");
         return;
       }
-
-//      this.jwt = this.getJwt('jwt') || "";
-//      if (!this.jwt) {
-//        alert("该页面不能直接在浏览器打开哦~");
-//        return;
-//      }
-      //console.log(this.jwt);
       this.$http({
         method: 'GET',
-        url: "https://ucast.cc/api/v1/games",
+        url: path,
         headers: {
-          Authorization: "bearer " + this.jwt
+          Authorization: "bearer " + jwt
         }
       }).then(res => {
-//          console.log(res);
-          this.recordList = res.body;
+          if(res.body.url){
+            window.location.href = res.body.url;
+            console.log(res.body.url);
+          }
+          else if(res.message)
+            alert(res.message);
+          else
+            alert("收款机有点问题~嘿嘿");
         },
         res => {
-          alert("账户有问题哦，截图发给技术蝈蝈领金币哦~");
+          alert("账户有问题哦~");
         });
+
+    },
+
+
+    init: function() {
+
     }
   },
   computed: {
