@@ -2,7 +2,8 @@
   <div class="list box flex flex-direction-column">
 
     <div class="head flex-shrink-0">
-    <a @click="onCapture()">拍个照~ 嘻嘻 {{qrCode}}</a>
+    <a @click="onCapture()">哈哈，测试链接，别管我：{{qrCode}}</a> 
+    <a href="#">版本号：{{getAppVersion}}</a>
     </div>
 
     <div class="content flex-grow-1 flex flex-direction-column overflow-y-scroll">
@@ -106,7 +107,7 @@ export default {
   },
   computed: {
     ...mapGetters([
-      'getJwt',
+      'getJwt', 'getAppVersion'
     ])
   },
   created: function() {

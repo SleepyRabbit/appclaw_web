@@ -20,7 +20,7 @@
           </router-link>
 
           <router-link to="recharge" class="list flex flex-align-items-center flex-justify-content-space-between">
-            <span class="list-left flex flex-align-items-center"><i class="icon-recharge"></i>充值</span>
+            <span class="list-left flex flex-align-items-center"><i class="icon-recharge"></i>获取金币</span>
             <div class="list-right flex flex-align-items-center">
               <i class="icon icon-more"></i>
             </div>
@@ -34,18 +34,19 @@
           </router-link>
 
           <router-link to="doll" class="list flex flex-align-items-center flex-justify-content-space-between">
-            <span class="list-left flex flex-align-items-center"><i class="icon-panda"></i>抓取娃娃</span>
+            <span class="list-left flex flex-align-items-center"><i class="icon-panda"></i>我的娃娃</span>
             <div class="list-right flex flex-align-items-center">
               <i class="icon icon-more"></i>
             </div>
           </router-link>
-
+<!--
           <router-link to="address" class="list flex flex-align-items-center flex-justify-content-space-between">
             <span class="list-left flex flex-align-items-center"><i class="icon-address"></i>我的地址</span>
             <div class="list-right flex flex-align-items-center">
               <i class="icon icon-more"></i>
             </div>
           </router-link>
+-->
 
           <router-link to="doll" class="list flex flex-align-items-center flex-justify-content-space-between">
             <span class="list-left flex flex-align-items-center"><i class="icon-share"></i>分享</span>

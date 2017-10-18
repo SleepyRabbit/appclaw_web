@@ -28,6 +28,11 @@ else if(localStorage.token){
   store.dispatch('setJwt', localStorage.token);   //或者 localstorage中包含token
 }
 */
+
+  if(typeof(from.query.app_version) != "undefined" ) {
+    store.dispatch('setVersion', from.query.app_version);
+  }
+
   next();
 })
 
