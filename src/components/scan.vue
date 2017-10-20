@@ -1,12 +1,12 @@
 <template>
   <div class="scan flex flex-direction-column">
     <div class="header flex">
-      <img src="../assets/img/banner2.jpeg" alt="">
+      <img src="../assets/img/claw_3D_qrcode.png" alt="">
     </div>
 
     <div class="tip flex-grow-1 flex flex-align-items-center flex-justify-content-center">
       <div class="tip-content">
-        <p>小哥哥，扫码来和我玩吧~~~</p>
+        <p>请扫描机器上二维码，扫码值为：{{qrCode}}</p>
       </div>
     </div>
 
@@ -22,13 +22,36 @@ export default {
   name: 'scan',
   data () {
     return {
+      qrCode: "Hi,I'm code."
     }
   },
   methods: {
     onScan: function () {
-      console.log('scan!');
+      let self = this;
+
+      //安排好native回调回来的入口
+      window.onQRCodeScanRet = (ret)=>{
+        delete window.onQRCodeScanRet;
+        self.qrCode = ret;
+
+        if(ret == "hahauCast"){
+          setTimeout(()=>{
+            self.$router.push({ path: 'list', query: {}});
+          }, 200);}
+      }
+
+      //调用扫码
+      window.WebViewJavascriptBridge.callHandler(
+        'onScanQrcode',
+        0,
+        (ret) => {console.log(ret);}
+      );
     }
   },
+  created: function() {
+    document.title = '扫码进入（#￣▽￣#）';
+  }
+
 }
 </script>
 
@@ -41,7 +64,7 @@ export default {
   }
 
   .header {
-    height: 240px;
+    //height: 240px;
     background-color: yellow;
   }
 
@@ -63,7 +86,7 @@ export default {
   }
 
   .content {
-    height: 100px;
+    height: 200px;
     background-color: rgb(5,188,255);
   }
 

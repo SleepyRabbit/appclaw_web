@@ -2,7 +2,6 @@
   <div class="list box flex flex-direction-column">
 
     <div class="head flex-shrink-0">
-    <a @click="onCapture()">哈哈，测试链接，别管我：{{qrCode}}</a> 
     <a href="#">版本号：{{getAppVersion}}</a>
     </div>
 
@@ -51,22 +50,6 @@ export default {
     }
   },
   methods: {
-    onCapture: function() {
-
-      //安排好native回调回来的入口
-      window.onQRCodeScanRet = (ret)=>{
-        delete window.onQRCodeScanRet;
-        this.qrCode = ret;
-      }
-
-      //调用扫码
-      window.WebViewJavascriptBridge.callHandler(
-        'onScanQrcode',
-        0,
-        (ret) => {console.log(ret);}
-      );
-    },
-
 
     onSelect: function(index) {
       if(this.glbList[index].scene.state == "down")
@@ -82,10 +65,7 @@ export default {
       );
     },
     init: function() {
-      /* 获取jwt */
       let jwt = this.getJwt;
-//      console.log(jwt);
-
       if(jwt.length === 0) {
         alert("jwt为空");
         return;
@@ -111,8 +91,9 @@ export default {
     ])
   },
   created: function() {
-//    console.log("created!");
     this.$nextTick(this.init, 100);
+    document.title = '选择喜欢的栏目';
+
   }
 }
 </script>
