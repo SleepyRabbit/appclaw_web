@@ -73,7 +73,7 @@ import { mapGetters } from 'vuex';
     /*top: 50px;*/
     width: 100%;
     height: 100%;
-    background-color: rgb(255,234,10);
+    background-color: #f7ee13;
   }
 
   .container {

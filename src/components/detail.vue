@@ -78,7 +78,7 @@ export default {
 <style scoped>
   .detail {
     padding: 10px;
-    background-color: rgb(241,233,49);
+    background-color: #f7ee13;
   }
 
   .banner {

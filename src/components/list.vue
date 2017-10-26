@@ -91,7 +91,7 @@ export default {
     ])
   },
   created: function() {
-    this.$nextTick(this.init, 100);
+    this.$nextTick(this.init);
     document.title = '选择喜欢的栏目';
 
   }
@@ -102,7 +102,7 @@ export default {
 <style scoped>
   .head {
     height: 80px;
-    background-color: rgb(241, 233, 49);
+    background-color: #f7ee13;
   }
 
   .content {

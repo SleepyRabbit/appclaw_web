@@ -2,13 +2,16 @@
   <div class="home box">
     <div class="content">
       <div class="content-banner flex flex-justify-content-center">
-        <div class="banner-content flex flex-direction-column flex-justify-content-center flex-align-items-center">
-          <img src="../../../assets/img/user1.jpg" alt="">
-          <h4>哆啦a梦</h4>
+        <div class=" flex flex-direction-column flex-justify-content-center flex-align-items-center">
+          <h2></h2>
         </div>
       </div>
 
-      <div class="user-list overflow-y-scroll">
+
+      <div class="container">
+        <!--img src="../../../assets/img/ucast_cover_playground.jpg" alt="" width="70%"-->
+      </div>
+      <!-- div class="user-list overflow-y-scroll">
         <div class="container">
           <router-link to="" class="list flex flex-align-items-center flex-justify-content-space-between">
             <span class="list-left flex flex-align-items-center"><i class="icon-score"></i>给我评分</span>
@@ -39,7 +42,12 @@
           </router-link>
         </div>
 
-      </div>
+      </div -->
+
+
+    
+
+
     </div>
 
   </div>
@@ -85,9 +93,9 @@
   }
 
   .content-banner {
-    height: 140px;
+    height: 100px;
     border-bottom: 1px solid rgb(235,235,235);
-    background-color: rgb(241,233,49);
+    background-color: #f7ee13;
   }
 
   .banner-content {
@@ -95,11 +103,11 @@
   }
 
   .banner-content img {
-    width: 80px;
-    height: 80px;
+    width: 300px;
+    //height: 400px;
     margin: 5px 0 5px 0;
     border: 2px solid white;
-    border-radius: 40px;
+    border-radius: 200px;
   }
 
   .banner-content h4 {
@@ -115,7 +123,7 @@
 
   .container {
     background-color: white;
-    padding: 0 15px;
+    padding: 0 20px;
   }
 
   .list {
@@ -141,6 +149,8 @@
     font-size: 20px;
     color: rgb(153,153,153);
   }
+
+
 </style>
 
 <style>
