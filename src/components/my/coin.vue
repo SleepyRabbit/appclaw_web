@@ -9,11 +9,11 @@
       <div class="container overflow-y-scroll">
         <a @click="" class="list flex flex-justify-content-space-between" v-for="item in bills">
           <div class="list-left flex flex-direction-column flex-justify-content-center">
-            <h3>{{item.comment}}</h3>
+            <h3>{{item.brief}}</h3>
             <p>{{item.time}}</p>
           </div>
           <div class="list-right flex flex-justify-content-center flex-align-items-center">
-            <p>{{item.fee}}</p>
+            <p>{{item.coin}}</p>
           </div>
         </a>
 

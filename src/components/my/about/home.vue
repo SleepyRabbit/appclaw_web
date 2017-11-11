@@ -9,7 +9,6 @@
 
 
       <div class="container">
-        <!--img src="../../../assets/img/ucast_cover_playground.jpg" alt="" width="70%"-->
       </div>
       <!-- div class="user-list overflow-y-scroll">
         <div class="container">

@@ -28,7 +28,7 @@
             </div>
 
             <h4>{{item.profile.title}}</h4>
-            <h5>{{item.profile.fee}}币/次</h5>
+            <h5>{{item.profile.coin}}币/次</h5>
           </a>
         </div>
 
