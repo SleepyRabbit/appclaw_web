@@ -87,7 +87,7 @@ export default {
 
       this.$http({
         method: 'GET',
-        url: "https://ucast.cc/api/v1/me",
+        url: "https://ucast.cc/api/v1/users/me",
         headers: {
           Authorization: "bearer " + jwt
         }
@@ -109,7 +109,25 @@ export default {
   created: function() {
     this.$nextTick(this.init, 100);
     document.title = '我的';
+  },
+
+  mounted: function() {
+/* 带上bill_id表示支付返回的尝试 宣告破产
+
+    let bill_id = this.$route.query.bill_id;
+    if (bill_id) {
+      setTimeout(() => {
+        this.$router.push({ path: '/my/recharge', query: { bill_id: bill_id } })
+      }, 200);
+    }
+
+    //子路径上的component可以通过下面代码获取参数
+
+    let bill_id = this.$route.query.bill_id;
+
+*/
   }
+
 }
 
 </script>
@@ -125,7 +143,8 @@ export default {
 .content-banner {
   height: 140px;
   border-bottom: 1px solid rgb(235, 235, 235);
-  background-color: rgb(5,188,255);/*#f7ee13;*/
+  background-color: rgb(5, 188, 255);
+  /*#f7ee13;*/
 }
 
 .banner-content {
